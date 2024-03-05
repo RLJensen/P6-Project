@@ -1,5 +1,4 @@
-FROM python:3.7
-WORKDIR C:\Users\Rasmus\Documents\GitHub\P6-Project
-COPY . C:\Users\Rasmus\Documents\GitHub\P6-Project\app
-RUN pip install -r requirements.txt
-CMD ["init.py"]
+FROM python
+WORKDIR /init
+COPY . /init
+CMD ["python3","init.py"]
