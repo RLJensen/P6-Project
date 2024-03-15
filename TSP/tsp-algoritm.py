@@ -8,6 +8,29 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# Read city coordinates from file
+def read_city_coordinates(filename):
+    city_coordinates = {}
+    with open(filename, 'r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            city = parts[0]
+            latitude = float(parts[1])
+            longitude = float(parts[2])
+            city_coordinates[city] = (latitude, longitude)
+    return city_coordinates
+
+# Select random cities
+def select_random_cities(city_coordinates, num_cities):
+    cities = random.sample(list(city_coordinates.keys()), num_cities)
+    return {city: city_coordinates[city] for city in cities}
+
+filename = 'cities.txt'
+city_coordinates = read_city_coordinates(filename)
+
+num_cities = 5  # Specify the number of cities you want to select
+random_cities = select_random_cities(city_coordinates, num_cities)
+
 # Example cities and their coordinates (latitude, longitude)
 cities = {
     "Tokyo": (35.6839, 139.7744),
