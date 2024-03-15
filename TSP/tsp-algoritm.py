@@ -15,9 +15,9 @@ cities = {
 }
 
 # Define parameters for the genetic algorithm
-population_size = 1
-num_generations = 1
-num_cpus = 3
+population_size = 100 # Number of routes in each generation
+num_generations = 1 # Number of generations
+num_cpus = 3 # Number of Workers
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -41,8 +41,8 @@ def haversine_distance(city1, city2):
 def total_distance(route):
     total = 0
     for i in range(len(route) - 1):
-        total += distance(cities[route[i]], cities[route[i+1]])
-    total += distance(cities[route[-1]], cities[route[0]])
+        total += haversine_distance(cities[route[i]], cities[route[i+1]])
+    total += haversine_distance(cities[route[-1]], cities[route[0]])
     return total
 
 # Generate initial population
