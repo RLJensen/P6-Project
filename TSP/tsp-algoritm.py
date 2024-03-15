@@ -9,10 +9,10 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Read city coordinates from file
-def read_city_coordinates(filename):
+def read_city_coordinates(filename, num_cities):
     city_coordinates = {}
     with open(filename, 'r') as file:
-        for line in file:
+        for line in file.readlines()[:num_cities]:
             parts = line.strip().split(',')
             city = parts[0]
             latitude = float(parts[1])
@@ -20,16 +20,10 @@ def read_city_coordinates(filename):
             city_coordinates[city] = (latitude, longitude)
     return city_coordinates
 
-# Select random cities
-def select_random_cities(city_coordinates, num_cities):
-    cities = random.sample(list(city_coordinates.keys()), num_cities)
-    return {city: city_coordinates[city] for city in cities}
-
-filename = 'cities.txt'
-city_coordinates = read_city_coordinates(filename)
-
+filename = './TSP/cities.txt'
 num_cities = 5  # Specify the number of cities you want to select
-random_cities = select_random_cities(city_coordinates, num_cities)
+
+cities_new = read_city_coordinates(filename, num_cities)
 
 # Example cities and their coordinates (latitude, longitude)
 cities = {
@@ -37,12 +31,17 @@ cities = {
     "New York": (40.6943, -73.9249),
     "Mexico City": (19.4333, -99.1333),
     "Mumbai": (18.9667, 72.8333),
-    "Sao Paulo": (-23.5504, -46.6339)
+    "Sao Paulo": (-23.5504, -46.6339),
+    "Delhi": (28.6667, 77.2167),
+    "Shanghai": (31.1667, 121.4667),
+    "Cairo": (30.05, 31.25),
+    "Osaka": (34.6939, 135.5022),
+    "Beijing": (39.9167, 116.3833)
 }
 
 # Define parameters for the genetic algorithm
-population_size = 10 # Number of routes in each generation
-num_generations = 5 # Number of generations
+population_size = 7 # Number of routes in each generation
+num_generations = 10 # Number of generations
 num_cpus = 3 # Number of Workers
 
 # Calculate distance between two cities
