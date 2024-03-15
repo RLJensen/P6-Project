@@ -1,16 +1,17 @@
+from math import atan2, cos, radians, sin, sqrt
 import numpy as np
 import random
 import itertools
 import multiprocessing
 import time
 
-# Example city coordinates
+# Example cities and their coordinates (latitude, longitude)
 cities = {
-    "A": (0, 0),
-    "B": (1, 2),
-    "C": (3, 1),
-    "D": (5, 3),
-    "E": (4, 0)
+    "Tokyo": (35.6839, 139.7744),
+    "New York": (40.6943, -73.9249),
+    "Mexico City": (19.4333, -99.1333),
+    "Mumbai": (18.9667, 72.8333),
+    "Sao Paulo": (-23.5504, -46.6339)
 }
 
 # Define parameters for the genetic algorithm
@@ -23,6 +24,18 @@ def distance(city1, city2):
     x1, y1 = city1
     x2, y2 = city2
     return np.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+# Calculate Haversine distance between two cities
+# This calculates the distance between two points on the surface of a sphere
+def haversine_distance(city1, city2):
+    R = 6371  # Radius of the Earth in kilometers
+    lat1, lon1 = radians(city1[0]), radians(city1[1])
+    lat2, lon2 = radians(city2[0]), radians(city2[1])
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    return R * c
 
 # Calculate total distance of a route
 def total_distance(route):
