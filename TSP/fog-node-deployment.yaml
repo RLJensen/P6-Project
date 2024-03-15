@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fog-node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fog-node
+  template:
+    metadata:
+      labels:
+        app: fog-node
+    spec:
+      containers:
+      - name: fog-node
+        image: fog-image
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fog-node-service
+spec:
+  selector:
+    app: fog-node
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
