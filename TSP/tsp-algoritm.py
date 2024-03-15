@@ -4,6 +4,9 @@ import random
 import itertools
 import multiprocessing
 import time
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Example cities and their coordinates (latitude, longitude)
 cities = {
@@ -15,8 +18,8 @@ cities = {
 }
 
 # Define parameters for the genetic algorithm
-population_size = 100 # Number of routes in each generation
-num_generations = 1 # Number of generations
+population_size = 10 # Number of routes in each generation
+num_generations = 5 # Number of generations
 num_cpus = 3 # Number of Workers
 
 # Calculate distance between two cities
@@ -86,12 +89,21 @@ def genetic_algorithm(population_size, num_generations):
     best_distance = float('inf')
 
     for _ in range(num_generations):
+        logging.info(f"Generation {_ + 1}/{num_generations}")
         # Split the population into subpopulations
         subpopulations = [population[i::num_cpus] for i in range(num_cpus)]
+
+        evaluation_start_time = time.time()
+        logging.info("Evaluating fitness of subpopulations...")
 
         # Evaluate fitness of subpopulations in parallel
         with multiprocessing.Pool(processes=num_cpus) as pool:
             evaluated_subpopulations = pool.map(evaluate_population, subpopulations)
+
+        evaluation_end_time = time.time()
+        evaluation_time = evaluation_end_time - evaluation_start_time
+        logging.info(f"Parallel fitness evaluation finished in {evaluation_time:.2f} seconds")
+
 
         # Flatten the evaluated subpopulations
         population = [route for subpopulation in evaluated_subpopulations for route, _ in subpopulation]
@@ -103,8 +115,12 @@ def genetic_algorithm(population_size, num_generations):
                     best_distance = distance
                     best_route = route
 
+        logging.info(f"Best distance in generation {_ + 1}: {best_distance}")
+
         # Evolve the population
         population = evolve_population(population)
+
+    logging.info("Genetic algorithm finished.")
 
     return best_route, best_distance
 
