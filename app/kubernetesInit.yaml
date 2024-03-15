@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: kubinit
-spec:
-  containers:
-  - name: kubinit
-    image: docker.io/rajensen/myimage:latest
-    command: ["python","monteCarloAlgo.py"]
