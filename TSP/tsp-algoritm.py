@@ -21,28 +21,14 @@ def read_city_coordinates(filename, num_cities):
     return city_coordinates
 
 filename = './TSP/cities.txt'
-num_cities = 5  # Specify the number of cities you want to select
+num_cities = 50 # Specify the number of cities you want to select
 
-cities_new = read_city_coordinates(filename, num_cities)
-
-# Example cities and their coordinates (latitude, longitude)
-cities = {
-    "Tokyo": (35.6839, 139.7744),
-    "New York": (40.6943, -73.9249),
-    "Mexico City": (19.4333, -99.1333),
-    "Mumbai": (18.9667, 72.8333),
-    "Sao Paulo": (-23.5504, -46.6339),
-    "Delhi": (28.6667, 77.2167),
-    "Shanghai": (31.1667, 121.4667),
-    "Cairo": (30.05, 31.25),
-    "Osaka": (34.6939, 135.5022),
-    "Beijing": (39.9167, 116.3833)
-}
+cities = read_city_coordinates(filename, num_cities)
 
 # Define parameters for the genetic algorithm
-population_size = 7 # Number of routes in each generation
-num_generations = 10 # Number of generations
-num_cpus = 3 # Number of Workers
+population_size = 9 # Number of routes in each generation (can only be less than 10)
+num_generations = 4 # Number of generations (can only be less than 5)
+num_cpus = 3 # Number of Workers (processes) to use
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -91,6 +77,7 @@ def evolve_population(subpopulation):
         child1 = route1[:crossover_point] + [city for city in route2 if city not in route1[:crossover_point]]
         child2 = route2[:crossover_point] + [city for city in route1 if city not in route2[:crossover_point]]
         offspring.extend([child1, child2])
+
 
     # Perform mutation
     for i in range(len(offspring)):
