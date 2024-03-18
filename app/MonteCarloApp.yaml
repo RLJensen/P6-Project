@@ -5,5 +5,5 @@ metadata:
 spec:
   containers:
   - name: montecarloapp
-    image: docker.io/rajensen/montecarloapp:latest
+    image: docker.io/rajensen/mcsapp:latest
     command: ["python","main.py"]
