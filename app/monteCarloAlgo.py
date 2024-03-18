@@ -12,16 +12,15 @@ def estimate_pi(num_points):
         x = random.uniform(0, 1)
         y = random.uniform(0, 1)
         distance = x**2 + y**2
-        currentLog = logger.getCPUandRAMLoad()
+        currentLog = logger.getCPUandRAMLoad(logger.getLoad())
         logs.append(currentLog)
-        logging.info(logs)
         if distance <= 1:
             points_inside_circle += 1
         
 
     # Pi is approximated by 4 * (number of points inside circle) / (total number of points)
     pi_estimate = 4 * points_inside_circle / total_points
-    return pi_estimate
+    return pi_estimate, logs
 
     
     

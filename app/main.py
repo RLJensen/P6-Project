@@ -1,5 +1,4 @@
 import monteCarloAlgo
-import logger
 import logging
 
 def main():
@@ -11,7 +10,9 @@ def main():
     # Estimating pi
     pi_approximation = monteCarloAlgo.estimate_pi(num_points)
     print("Approximation of pi using Monte Carlo method:", pi_approximation[0])
-    logging.info(pi_approximation[1].data.totalLoad[2])
+    for i in pi_approximation[1]:
+        logging.info(pi_approximation[1][i])
+        
     
 
 
