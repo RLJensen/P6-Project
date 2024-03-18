@@ -3,7 +3,7 @@ import psutil
 from datetime import datetime
 
 def getLoad():
-    CPULoad = psutil.cpu_percent(interval=None)
+    CPULoad = psutil.cpu_times_percent() #psutil.cpu_percent(interval=None)
     RAMLoad = psutil.virtual_memory().percent
     availableRAM = psutil.virtual_memory().available
     totalLoad = [CPULoad, RAMLoad, availableRAM]

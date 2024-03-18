@@ -10,8 +10,9 @@ def main():
     # Estimating pi
     pi_approximation = monteCarloAlgo.estimate_pi(num_points)
     print("Approximation of pi using Monte Carlo method:", pi_approximation[0])
-    for i in pi_approximation[1]:
-        logging.info(pi_approximation[1][i])
+    logObjcets = pi_approximation[1]
+    for obj in logObjcets:
+        logging.info(obj)
         
     
 
