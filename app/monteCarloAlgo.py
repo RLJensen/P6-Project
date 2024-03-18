@@ -14,6 +14,7 @@ def estimate_pi(num_points):
         distance = x**2 + y**2
         currentLog = logger.getCPUandRAMLoad()
         logs.append(currentLog)
+        logging.info(logs)
         if distance <= 1:
             points_inside_circle += 1
         

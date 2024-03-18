@@ -3,9 +3,7 @@ import psutil
 from datetime import datetime
 
 def monteCarloLogger():
-    logging.basicConfig(filename="app.log", 
-                        level=logging.INFO, 
-                        format='%(asctime)s - CPU load: %(cpu_load)s - RAM load: %(ram_load)s - Used RAM: %(used_ram)s- %(message)s'
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s'
                         )
 
     
