@@ -1,11 +1,12 @@
 import monteCarloAlgo
 import logging
+import minRegtangle
 
 def main():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting program")
     # Number of random points to generate
-    num_points = 500
+    num_points = 1
 
     # Estimating pi
     pi_approximation = monteCarloAlgo.estimate_pi(num_points)
