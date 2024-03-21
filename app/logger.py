@@ -3,7 +3,7 @@ import psutil
 from datetime import datetime
 
 def getLoad():
-    CPULoad = psutil.cpu_times_percent() #psutil.cpu_percent(interval=None)
+    CPULoad = psutil.cpu_percent() #psutil.cpu_percent(interval=None)
     RAMLoad = psutil.virtual_memory().percent
     availableRAM = psutil.virtual_memory().available
     totalLoad = [CPULoad, RAMLoad, availableRAM]
@@ -19,7 +19,7 @@ class getCPUandRAMLoad:
             logging.error("Could not get CPU and RAM information", self.formattedTime)
 
     def __str__(self):
-        return f"CPU and RAM Load Data at {self.formattedTime}: CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM:{self.loadData[2]/1000000000}GB"
+        return f"CPU and RAM Load Data at {self.formattedTime}: CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM:{round(self.loadData[2]/1000000000,2)} GB"
 
 
                 
