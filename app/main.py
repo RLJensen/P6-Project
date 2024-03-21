@@ -16,6 +16,13 @@ def main():
     for obj in logObjcets:
         logging.info(obj)
 
+    whisperResult = whisperWorkload.loadModel()
+    logging.info("Now starting Whisper workload")
+    for obj in whisperResult[0]:
+        print(obj)
+        for info in whisperResult[1]:
+            logging.info(info)
+
 
 
 if __name__ == "__main__":
