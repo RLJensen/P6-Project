@@ -22,6 +22,7 @@ def main():
     whisper = whisperWorkload.loadModel()
     whisperResult = whisper[0]
     whisperLoad = whisper[1]
+    whisperSearchResult = whisper[2]
     logging.info("Now starting Whisper workload")
     for key, value in whisperResult.items():
         print(key, ":", value)
@@ -29,7 +30,8 @@ def main():
     for info in whisperLoad:
         logging.info(info)
 
-
+    for info in whisperSearchResult:
+        logging.info(info)
 
 if __name__ == "__main__":
     main()
