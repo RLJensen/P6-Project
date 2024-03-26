@@ -9,10 +9,10 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Read city coordinates from file
-def read_city_coordinates(filename):
+def read_city_coordinates(filename, num_cities):
     city_coordinates = {}
     with open(filename, 'r') as file:
-        for line in file:
+        for line in file.readlines()[:num_cities]:
             parts = line.strip().split(',')
             city = parts[0]
             latitude = float(parts[1])
@@ -20,30 +20,15 @@ def read_city_coordinates(filename):
             city_coordinates[city] = (latitude, longitude)
     return city_coordinates
 
-# Select random cities
-def select_random_cities(city_coordinates, num_cities):
-    cities = random.sample(list(city_coordinates.keys()), num_cities)
-    return {city: city_coordinates[city] for city in cities}
-
 filename = './TSP/cities.txt'
-city_coordinates = read_city_coordinates(filename)
+num_cities = 50 # Specify the number of cities you want to select
 
-num_cities = 5  # Specify the number of cities you want to select
-random_cities = select_random_cities(city_coordinates, num_cities)
-
-# Example cities and their coordinates (latitude, longitude)
-cities = {
-    "Tokyo": (35.6839, 139.7744),
-    "New York": (40.6943, -73.9249),
-    "Mexico City": (19.4333, -99.1333),
-    "Mumbai": (18.9667, 72.8333),
-    "Sao Paulo": (-23.5504, -46.6339)
-}
+cities = read_city_coordinates(filename, num_cities)
 
 # Define parameters for the genetic algorithm
-population_size = 10 # Number of routes in each generation
-num_generations = 5 # Number of generations
-num_cpus = 3 # Number of Workers
+population_size = 9 # Number of routes in each generation (can only be less than 10)
+num_generations = 4 # Number of generations (can only be less than 5)
+num_cpus = 3 # Number of Workers (processes) to use
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -92,6 +77,7 @@ def evolve_population(subpopulation):
         child1 = route1[:crossover_point] + [city for city in route2 if city not in route1[:crossover_point]]
         child2 = route2[:crossover_point] + [city for city in route1 if city not in route2[:crossover_point]]
         offspring.extend([child1, child2])
+
 
     # Perform mutation
     for i in range(len(offspring)):
