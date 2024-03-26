@@ -25,7 +25,7 @@ def select_random_cities(city_coordinates, num_cities):
     cities = random.sample(list(city_coordinates.keys()), num_cities)
     return {city: city_coordinates[city] for city in cities}
 
-filename = 'cities.txt'
+filename = './TSP/cities.txt'
 city_coordinates = read_city_coordinates(filename)
 
 num_cities = 5  # Specify the number of cities you want to select
