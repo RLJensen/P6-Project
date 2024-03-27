@@ -10,7 +10,7 @@ def getLoad():
     return totalLoad
 
 class getCPUandRAMLoad:
-    def __init__(self,getLoad=None):
+    def __init__(self,getLoad=[]):
         self.currentTime = datetime.now()
         self.formattedTime = self.currentTime.strftime("%d-%m-%Y %H:%M:%S")
         self.loadData = getLoad
