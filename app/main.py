@@ -1,6 +1,6 @@
-import monteCarloAlgo
+import monteCarlo.monteCarloAlgo as monteCarloAlgo
 import logging
-import whisperWorkload
+import whisperWorkload.whisperWorkload as whisperWorkload
 
 def main():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

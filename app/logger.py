@@ -21,7 +21,3 @@ class getCPUandRAMLoad:
     def __str__(self):
         return f"CPU and RAM Load Data at {self.formattedTime}: CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM:{round(self.loadData[2]/1000000000,2)} GB"
 
-
-                
-
-

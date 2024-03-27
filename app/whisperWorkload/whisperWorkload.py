@@ -9,7 +9,7 @@ def loadModel():
     model = whisper.load_model("tiny")
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
-    result = model.transcribe("test.mp3",fp16=False)
+    result = model.transcribe("whisperWorkload/test.mp3",fp16=False)
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
 
