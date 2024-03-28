@@ -20,7 +20,7 @@ def read_city_coordinates(filename, num_cities):
             city_coordinates[city] = (latitude, longitude)
     return city_coordinates
 
-filename = './TSP/cities.txt'
+filename = 'cities.txt'
 num_cities = 50 # Specify the number of cities you want to select
 
 cities = read_city_coordinates(filename, num_cities)
