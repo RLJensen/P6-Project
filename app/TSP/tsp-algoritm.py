@@ -22,13 +22,13 @@ def read_city_coordinates(filename, num_cities):
 
 filename = 'cities.txt'
 num_cities = random.randint(10, 100) # Specify the number of cities you want to select
-print("Number of cities:", num_cities)
+logging.info(f"Number of cities: {num_cities}")
 
 cities = read_city_coordinates(filename, num_cities)
 
 # Define parameters for the genetic algorithm
 population_size = random.randint(15, 20) # Number of routes in each generation
-print("Population size:", population_size)
+logging.info(f"Population size: {population_size}")
 num_generations = 3 # Number of generations
 
 # Calculate distance between two cities
@@ -131,6 +131,6 @@ if __name__ == "__main__":
     start_time = time.time()
     best_route, best_distance = genetic_algorithm(population_size, num_generations)
     end_time = time.time()
-    print("Best Route:", best_route)
-    print("Best Distance:", best_distance)
-    print("Time taken:", end_time - start_time, "seconds")
+    logging.info(f"Best Route: {best_route}")
+    logging.info(f"Best Distance: {best_distance}")
+    logging.info(f"Time taken: {end_time - start_time} seconds")
