@@ -1,0 +1,8 @@
+FROM python:3.9.9
+
+WORKDIR /whisperWorkload
+
+COPY whisperWorkload.py .
+COPY test.mp3 .
+
+CMD ["python", "whisperWorkload.py"]
