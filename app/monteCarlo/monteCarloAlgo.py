@@ -1,26 +1,51 @@
 import random
 import logger
 import logging
-def estimate_pi(num_points):
-    logging.info("Montecarlo algorithm proccess is starting")
-    points_inside_circle = 0
-    total_points = num_points
-    logs = []
 
-    for _ in range(num_points):
-        
-        x = random.uniform(0, 1)
-        y = random.uniform(0, 1)
-        distance = x**2 + y**2
+def startWorkload():
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.info("Starting program")
+
+    logObjects = estimateDice(10000,100,100)
+
+    for obj in logObjects:
+        logging.info(obj)
+
+def estimateDice(funds,initial_wager,wager_count):
+    logs = []
+    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
+    logs.append(currentLog)
+    value = funds
+    wager = initial_wager
+
+    currentWager = 0
+
+    while currentWager < wager_count:
         currentLog = logger.getCPUandRAMLoad(logger.getLoad())
         logs.append(currentLog)
-        if distance <= 1:
-            points_inside_circle += 1
-        
+        if rollDice():
+            value += wager
+        else:
+            value -= wager
 
-    # Pi is approximated by 4 * (number of points inside circle) / (total number of points)
-    pi_estimate = 4 * points_inside_circle / total_points
-    return pi_estimate, logs
+        currentWager += 1
+        print('Funds:', value)
+        currentLog = logger.getCPUandRAMLoad(logger.getLoad())
+        logs.append(currentLog)
+    return logs
+    
+def rollDice():
+    roll = random.randint(1,100)
 
+    if roll == 100:
+        print(roll,'roll was 100, you lose. What are the odds?! Play again!')
+        return False
+    elif roll <= 50:
+        print(roll,'roll was 1-50, you lose.')
+        return False
+    elif 100 > roll >= 50:
+        print(roll,'roll was 51-99, you win! *pretty lights flash* (play more!)')
+        return True
     
-    
+if __name__ == "__monteCarloAlgo__":
+    startWorkload()
