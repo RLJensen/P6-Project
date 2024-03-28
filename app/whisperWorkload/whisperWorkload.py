@@ -6,7 +6,19 @@ from googlesearch import search
 def startWorkload():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting whisper workload")
-    loadModel()
+    whisper = loadModel()
+    whisperResult = whisper[0]
+    whisperLoad = whisper[1]
+    whisperSearchResult = whisper[2]
+    logging.info("Now starting Whisper workload")
+    for key, value in whisperResult.items():
+        print(key, ":", value)
+    
+    for info in whisperLoad:
+        logging.info(info)
+
+    for info in whisperSearchResult:
+        logging.info(info)
 
 def loadModel():
     logs = []
