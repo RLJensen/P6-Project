@@ -2,7 +2,6 @@ from math import atan2, cos, radians, sin, sqrt
 import numpy as np
 import random
 import itertools
-import multiprocessing
 import time
 import logging
 
