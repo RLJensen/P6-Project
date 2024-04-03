@@ -26,7 +26,7 @@ num_cities = 50 # Specify the number of cities you want to select
 cities = read_city_coordinates(filename, num_cities)
 
 # Define parameters for the genetic algorithm
-population_size = 9 # Number of routes in each generation (can only be less than 10)
+population_size = 12 # Number of routes in each generation (can only be less than 10)
 num_generations = 4 # Number of generations (can only be less than 5)
 num_cpus = 3 # Number of Workers (processes) to use
 
