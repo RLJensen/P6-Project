@@ -1,6 +1,6 @@
 import random
-import logger
 import logging
+import logger
 
 def startWorkload():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -47,5 +47,5 @@ def rollDice():
         print(roll,'roll was 51-99, you win! *pretty lights flash* (play more!)')
         return True
     
-if __name__ == "__monteCarloAlgo__":
+if __name__ == "__main__":
     startWorkload()
