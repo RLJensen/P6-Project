@@ -27,7 +27,7 @@ def loadModel():
     model = whisper.load_model("tiny",None,download_root="/models")
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
-    result = model.transcribe("whisperWorkload/test.mp3",fp16=False)
+    result = model.transcribe("test.mp3",fp16=False)
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
 
@@ -39,5 +39,5 @@ def performSearch(query):
     result = search(query,10,"en",None,False,10,5)
     return result
 
-if __name__ == "__whisperWorkload__":
+if __name__ == "__main__":
     startWorkload()
