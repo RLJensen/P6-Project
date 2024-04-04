@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-deployment
+spec:
+  selector:
+    matchLabels:
+      app: pod
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pod
+    spec:
+      containers:
+      - name: mcapp
+        image: docker.io/casperbchristensen/mcapp:latest
+        command: ["python","montaCarloAlgo.py"]
+        ports:
+        - containerPort: 5000
+      - name: tspapp
+        image: docker.io/casperbchristensen/tspapp:latest
+        command: ["python","tsp-algoritm.py"]
+        ports:
+        - containerPort: 5001
+      - name: whisperapp
+        image: docker.io/casperbchristensen/whisperapp:latest
+        command: ["python","whisperWorkload.py"]
+        ports:
+        - containerPort: 5002
