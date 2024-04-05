@@ -2,7 +2,6 @@ from math import atan2, cos, radians, sin, sqrt
 import numpy as np
 import random
 import itertools
-import multiprocessing
 import time
 import logging
 
@@ -21,14 +20,15 @@ def read_city_coordinates(filename, num_cities):
     return city_coordinates
 
 filename = 'cities.txt'
-num_cities = 50 # Specify the number of cities you want to select
+num_cities = random.randint(10, 100) # Specify the number of cities you want to select
+logging.info(f"Number of cities: {num_cities}")
 
 cities = read_city_coordinates(filename, num_cities)
 
 # Define parameters for the genetic algorithm
-population_size = 12 # Number of routes in each generation (can only be less than 10)
-num_generations = 4 # Number of generations (can only be less than 5)
-num_cpus = 3 # Number of Workers (processes) to use
+population_size = random.randint(15, 20) # Number of routes in each generation
+logging.info(f"Population size: {population_size}")
+num_generations = 3 # Number of generations
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -97,34 +97,27 @@ def genetic_algorithm(population_size, num_generations):
     best_route = None
     best_distance = float('inf')
 
-    for _ in range(num_generations):
-        logging.info(f"Generation {_ + 1}/{num_generations}")
-        # Split the population into subpopulations
-        subpopulations = [population[i::num_cpus] for i in range(num_cpus)]
-
+    for gen in range(num_generations):
+        logging.info(f"Generation {gen + 1}/{num_generations}")
+        
+        # Evaluate fitness of the entire population
         evaluation_start_time = time.time()
-        logging.info("Evaluating fitness of subpopulations...")
-
-        # Evaluate fitness of subpopulations in parallel
-        with multiprocessing.Pool(processes=num_cpus) as pool:
-            evaluated_subpopulations = pool.map(evaluate_population, subpopulations)
-
+        logging.info("Evaluating fitness of population...")
+        evaluated_population = evaluate_population(population)
         evaluation_end_time = time.time()
         evaluation_time = evaluation_end_time - evaluation_start_time
-        logging.info(f"Parallel fitness evaluation finished in {evaluation_time:.2f} seconds")
+        logging.info(f"Sequential fitness evaluation finished in {evaluation_time:.2f} seconds")
+        
+        # Update population with evaluated routes
+        population = [route for route, _ in evaluated_population]
 
+        # Find the best route in the evaluated population
+        for route, distance in evaluated_population:
+            if distance < best_distance:
+                best_distance = distance
+                best_route = route
 
-        # Flatten the evaluated subpopulations
-        population = [route for subpopulation in evaluated_subpopulations for route, _ in subpopulation]
-
-        # Find the best route in the evaluated subpopulations
-        for subpopulation in evaluated_subpopulations:
-            for route, distance in subpopulation:
-                if distance < best_distance:
-                    best_distance = distance
-                    best_route = route
-
-        logging.info(f"Best distance in generation {_ + 1}: {best_distance}")
+        logging.info(f"Best distance in generation {gen + 1}: {best_distance}")
 
         # Evolve the population
         population = evolve_population(population)
@@ -137,6 +130,6 @@ if __name__ == "__main__":
     start_time = time.time()
     best_route, best_distance = genetic_algorithm(population_size, num_generations)
     end_time = time.time()
-    print("Best Route:", best_route)
-    print("Best Distance:", best_distance)
-    print("Time taken:", end_time - start_time, "seconds")
+    logging.info(f"Best Route: {best_route}")
+    logging.info(f"Best Distance: {best_distance}")
+    logging.info(f"Time taken: {end_time - start_time} seconds")
