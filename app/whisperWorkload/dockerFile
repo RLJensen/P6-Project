@@ -10,6 +10,6 @@ RUN apt-get install -y ffmpeg
 COPY whisperWorkload.py .
 COPY models/tiny.pt .
 COPY logger.py .
-COPY test.mp3 .
+COPY files .
 
 CMD ["python", "whisperWorkload.py"]

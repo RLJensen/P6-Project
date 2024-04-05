@@ -1,3 +1,5 @@
+import os
+import random
 import whisper
 import logging
 import logger
@@ -21,13 +23,15 @@ def startWorkload():
         logging.info(info)
 
 def loadModel():
+    files = os.listdir(os.getcwd())
+    sound_file = random.choice([file for file in files if file.endswith('.mp3')])
     logs = []
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
     model = whisper.load_model("tiny",None,download_root="/models")
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
-    result = model.transcribe("test.mp3",fp16=False)
+    result = model.transcribe(sound_file,fp16=False)
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
 
