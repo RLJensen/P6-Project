@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install git -y
 RUN apt-get install -y ffmpeg
 
 COPY whisperWorkload.py .
-COPY models/tiny.pt .
+COPY models/base.pt .
 COPY logger.py .
 COPY files .
 

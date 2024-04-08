@@ -28,7 +28,7 @@ def loadModel():
     logs = []
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
-    model = whisper.load_model("tiny",None,download_root="./")
+    model = whisper.load_model("base",None,download_root="./")
     currentLog = logger.getCPUandRAMLoad(logger.getLoad())
     logs.append(currentLog)
     result = model.transcribe(sound_file,fp16=False)
