@@ -159,6 +159,10 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-#dont expose mp3 files
+# dont expose mp3 files
 *.mp3
 !internal/data/*.mp3
+
+# dont expose model files
+*.pt
+!internal/data/*.pt
