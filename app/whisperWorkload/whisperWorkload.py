@@ -10,14 +10,10 @@ def startWorkload():
     logging.info("Starting whisper workload")
     whisper = loadModel()
     whisperResult = whisper[0]
-    whisperLoad = whisper[1]
-    whisperSearchResult = whisper[2]
+    whisperSearchResult = whisper[1]
     logging.info("Now starting Whisper workload")
     for key, value in whisperResult.items():
         print(key, ":", value)
-    
-    for info in whisperLoad:
-        logging.info(info)
 
     for info in whisperSearchResult:
         logging.info(info)
@@ -25,23 +21,21 @@ def startWorkload():
 def loadModel():
     files = os.listdir(os.getcwd())
     sound_file = random.choice([file for file in files if file.endswith('.mp3')])
-    logs = []
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
     model = whisper.load_model("base",None,download_root="./")
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
     result = model.transcribe(sound_file,fp16=False)
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
 
     whisperText = list(result.values())[0]
     searchresult = performSearch(whisperText)
-    return result, logs, searchresult
+    return result, searchresult
 
 def performSearch(query):
     result = search(query,10,"en",None,False,10,5)
     return result
 
 if __name__ == "__main__":
+    logger = logger.PerformanceLogger()
+    logger.start()
     startWorkload()
+    logs = logger.stop()
+    # for log in logs:
+    #     logging.info(log)
