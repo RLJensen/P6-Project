@@ -5,7 +5,7 @@ import logger
 def startWorkload():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting program")
-    count = random.randint(100000,1000000)
+    count = random.randint(1000000,5000000)
 
     estimateDice(10000, 100, count)
 
@@ -25,7 +25,7 @@ def estimateDice(funds,initial_wager,wager_count):
             value -= wager
 
         currentWager += 1
-    print('Final funds', value)
+    logging.info(f"Final funds: {value}")
     
 def rollDice():
     roll = random.randint(1,100)
@@ -45,5 +45,5 @@ if __name__ == "__main__":
     logger.start()
     startWorkload()
     logs = logger.stop()
-    for log in logs:
-        print(log)
+    # for log in logs:
+    #     logging.info(log)

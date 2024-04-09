@@ -4,7 +4,6 @@ from datetime import datetime
 import threading
 import time
 
-
 def getLoad():
     CPULoad = psutil.cpu_percent() #psutil.cpu_percent(interval=None)
     RAMLoad = psutil.virtual_memory().percent
@@ -13,12 +12,9 @@ def getLoad():
     return totalLoad
 
 class PerformanceLogger:
-    logs = []
-
     def __init__(self):
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         self.logs = []
-        self.formattedTime = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
         self._running = False
         self._thread = None
     
@@ -36,6 +32,7 @@ class PerformanceLogger:
     def update(self):
         while self._running:
             self.loadData = getLoad()
-            currentLog = f"CPU and RAM Load Data at {self.formattedTime}: CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM:{round(self.loadData[2]/1000000000,2)} GB"
-            self.logs.append(currentLog)
-            time.sleep(0.5)
+            self.formattedTime = datetime.now().strftime("%d-%m-%Y %H:%M:%S:%f")[:-3]
+            logging.info(f"CPU and RAM Load Data at {self.formattedTime}: CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM:{round(self.loadData[2]/1000000000,2)} GB")
+            # self.logs.append(currentLog)
+            time.sleep(0.2)
