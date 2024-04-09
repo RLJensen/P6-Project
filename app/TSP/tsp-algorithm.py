@@ -4,6 +4,7 @@ import random
 import itertools
 import time
 import logging
+import logger
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -127,9 +128,14 @@ def genetic_algorithm(population_size, num_generations):
     return best_route, best_distance
 
 if __name__ == "__main__":
+    logger = logger.PerformanceLogger()
+    logger.start()
     start_time = time.time()
     best_route, best_distance = genetic_algorithm(population_size, num_generations)
     end_time = time.time()
     logging.info(f"Best Route: {best_route}")
     logging.info(f"Best Distance: {best_distance}")
     logging.info(f"Time taken: {end_time - start_time} seconds")
+    logs = logger.stop()
+    # for log in logs:
+    #     logging.info(log)
