@@ -5,38 +5,27 @@ import logger
 def startWorkload():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting program")
-    count = random.randint(100,1000)
+    count = random.randint(100000,1000000)
 
-    logObjects = estimateDice(10000,100,count)
-
-    for obj in logObjects:
-        logging.info(obj)
+    estimateDice(10000, 100, count)
 
 def estimateDice(funds,initial_wager,wager_count):
-    logs = []
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
     value = funds
     wager = initial_wager
-    print('Wager count', wager_count)
-    print('Wager', wager)
-    print('Initial funds', value)
+    logging.info(f"Wager count: {wager_count}")
+    logging.info(f"Wager: {wager}")
+    logging.info(f"Initial funds: {value}")
 
     currentWager = 0
 
     while currentWager < wager_count:
-        currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-        logs.append(currentLog)
         if rollDice():
             value += wager
         else:
             value -= wager
 
         currentWager += 1
-        currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-        logs.append(currentLog)
     print('Final funds', value)
-    return logs
     
 def rollDice():
     roll = random.randint(1,100)
@@ -52,4 +41,9 @@ def rollDice():
         return True
     
 if __name__ == "__main__":
+    logger = logger.PerformanceLogger()
+    logger.start()
     startWorkload()
+    logs = logger.stop()
+    for log in logs:
+        print(log)
