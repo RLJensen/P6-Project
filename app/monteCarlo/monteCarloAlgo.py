@@ -12,6 +12,7 @@ def startWorkload():
 def estimateDice(funds,initial_wager,wager_count):
     value = funds
     wager = initial_wager
+    num_wins = 0
     logging.info(f"Wager count: {wager_count}")
     logging.info(f"Wager: {wager}")
     logging.info(f"Initial funds: {value}")
@@ -21,11 +22,15 @@ def estimateDice(funds,initial_wager,wager_count):
     while currentWager < wager_count:
         if rollDice():
             value += wager
+            num_wins += 1
         else:
             value -= wager
 
         currentWager += 1
+    logging.info(f"Number of wins: {num_wins}")
+    logging.info(f"Number of losses: {wager_count - num_wins}")
     logging.info(f"Final funds: {value}")
+
     
 def rollDice():
     roll = random.randint(1,100)
