@@ -19,16 +19,20 @@ class PerformanceLogger:
         self.logs = []
         self._running = False
         self._thread = None
+        self.timer = 0
     
     def start(self):
         self._running = True
-        logging.info("Starting program")
+        logging.info(f"Starting Workload")
+
         hostname = socket.gethostname()
         ip_address = socket.gethostbyname(hostname)
         mac_address = ':'.join(['{:02x}'.format((uuid.getnode() >> elements) & 0xff) for elements in range(0,2*6,2)][::-1])
         logging.info(f"Hostname: {hostname}")
         logging.info(f"IP Address: {ip_address}")
         logging.info(f"MAC Address: {mac_address}")
+        
+        self.timer = time.time()
         self._thread = threading.Thread(target=self.update)
         self._thread.start()
 
@@ -36,6 +40,8 @@ class PerformanceLogger:
         self._running = False
         if self._thread is not None:
             self._thread.join()
+        elapsedTime = time.time() - self.timer
+        logging.info(f"Workload Finished in {elapsedTime} seconds")
         return self.logs
     
     def update(self):

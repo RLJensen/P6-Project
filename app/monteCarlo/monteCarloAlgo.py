@@ -4,7 +4,6 @@ import logger
 
 def startWorkload():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starting program")
     count = random.randint(1000000,5000000)
 
     estimateDice(10000, 100, count)
