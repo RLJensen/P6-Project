@@ -5,8 +5,32 @@ import itertools
 import time
 import logging
 import logger
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+import uuid
+import socket
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        record.hostname = hostname
+        record.uuid = uuid
+        return super().format(record)
+
+def setup_logger():
+    custom_logger = logging.getLogger()
+    custom_logger.setLevel(logging.INFO)
+
+    if custom_logger.hasHandlers():
+        custom_logger.handlers.clear()
+
+    handler = logging.StreamHandler()
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(uuid)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    custom_logger.addHandler(handler)
+
+uuid = str(uuid.uuid4())
+hostname = socket.gethostname()
 
 # Read city coordinates from file
 def read_city_coordinates(filename, num_cities):
@@ -20,16 +44,16 @@ def read_city_coordinates(filename, num_cities):
             city_coordinates[city] = (latitude, longitude)
     return city_coordinates
 
+# Define parameters for the algorithm
 filename = 'cities.txt'
-num_cities = random.randint(10, 100) # Specify the number of cities you want to select
+num_cities = 7 #random.randint(10, 100) # Specify the number of cities you want to select
 logging.info(f"Number of cities: {num_cities}")
-
 cities = read_city_coordinates(filename, num_cities)
-
-# Define parameters for the genetic algorithm
-population_size = random.randint(15, 20) # Number of routes in each generation
+#cities = {'Copenhagen': (55.6761, 12.5683), 'Manilla': (14.5995, 120.9842), 'New York': (40.7128, -74.0060),  'Tokyo': (35.6895, 139.6917), 'Cape Town': (-33.9249, 18.4241), 'Rio de Janeiro': (-22.9068, -43.1729), 'Canberra': (-35.2809, 149.1300)}
+population_size = 20 #random.randint(15, 20) # Number of routes in each generation
 logging.info(f"Population size: {population_size}")
 num_generations = 3 # Number of generations
+logging.info(f"Number of generations: {num_generations}")
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -79,13 +103,12 @@ def evolve_population(subpopulation):
         child2 = route2[:crossover_point] + [city for city in route1 if city not in route2[:crossover_point]]
         offspring.extend([child1, child2])
 
-
     # Perform mutation
     for i in range(len(offspring)):
         if random.random() < 0.2:
             idx1, idx2 = random.sample(range(len(offspring[i])), 2)
             offspring[i][idx1], offspring[i][idx2] = offspring[i][idx2], offspring[i][idx1]
-
+    
     return offspring
 
 # Evaluate the population
@@ -127,7 +150,44 @@ def genetic_algorithm(population_size, num_generations):
 
     return best_route, best_distance
 
+def plot_route(best_route):
+    plt.figure(figsize=(12, 8))
+    m = Basemap(projection='mill', llcrnrlat=-90, urcrnrlat=90, llcrnrlon=-180, urcrnrlon=180)
+    m.drawcoastlines()
+    m.drawcountries()
+
+    for city in best_route:
+        lat = cities[city][0]
+        lon = cities[city][1]
+        x, y = m(lon, lat)
+        m.plot(x, y, 'ro', markersize=5)
+        plt.text(x, y, city, fontsize=12, color='b', ha='right', va='bottom') # type: ignore
+
+    for i in range(len(best_route) - 1):
+        city1 = best_route[i]
+        city2 = best_route[(i + 1)]
+        lat1, lon1 = cities[city1]
+        lat2, lon2 = cities[city2]
+        x1, y1 = m(lon1, lat1)
+        x2, y2 = m(lon2, lat2)
+        #m.plot([x1, x2], [y1, y2], color='r', linewidth=1)
+        plt.arrow(x1, y1, x2 - x1, y2 - y1, head_width=100000, head_length=100000, fc='b', ec='b') # type: ignore
+        plt.text((x1 + x2) / 2, (y1 + y2) / 2, str(i + 1), fontsize=12, color='r') # type: ignore
+
+    city1 = best_route[-1]
+    city2 = best_route[0]
+    lat1, lon1 = cities[city1]
+    lat2, lon2 = cities[city2]
+    x1, y1 = m(lon1, lat1)
+    x2, y2 = m(lon2, lat2)
+    plt.arrow(x1, y1, x2 - x1, y2 - y1, head_width=100000, head_length=100000, fc='b', ec='b') # type: ignore
+    plt.text((x1 + x2) / 2, (y1 + y2) / 2, 7, fontsize=12, color='r') # type: ignore
+
+    plt.title("Best Route")
+    plt.show()
+
 if __name__ == "__main__":
+    setup_logger()
     logger = logger.PerformanceLogger()
     logger.start()
     start_time = time.time()
@@ -137,5 +197,6 @@ if __name__ == "__main__":
     logging.info(f"Best Distance: {best_distance}")
     logging.info(f"Time taken: {end_time - start_time} seconds")
     logs = logger.stop()
+    #plot_route(best_route)
     # for log in logs:
     #     logging.info(log)

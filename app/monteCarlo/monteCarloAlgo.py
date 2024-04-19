@@ -1,12 +1,34 @@
 import random
 import logging
 import logger
+import uuid
+import socket
+
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        record.hostname = hostname
+        record.uuid = uuid
+        return super().format(record)
+
+def setup_logger():
+    custom_logger = logging.getLogger()
+    custom_logger.setLevel(logging.INFO)
+
+    if custom_logger.hasHandlers():
+        custom_logger.handlers.clear()
+
+    handler = logging.StreamHandler()
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(uuid)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    custom_logger.addHandler(handler)
+
+uuid = str(uuid.uuid4())
+hostname = socket.gethostname()
 
 def startWorkload():
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starting program")
     count = random.randint(1000000,5000000)
-
     estimateDice(10000, 100, count)
 
 def estimateDice(funds,initial_wager,wager_count):
@@ -25,12 +47,11 @@ def estimateDice(funds,initial_wager,wager_count):
             num_wins += 1
         else:
             value -= wager
-
         currentWager += 1
+
     logging.info(f"Number of wins: {num_wins}")
     logging.info(f"Number of losses: {wager_count - num_wins}")
     logging.info(f"Final funds: {value}")
-
     
 def rollDice():
     roll = random.randint(1,100)
@@ -46,6 +67,7 @@ def rollDice():
         return True
     
 if __name__ == "__main__":
+    setup_logger()
     logger = logger.PerformanceLogger()
     logger.start()
     startWorkload()
