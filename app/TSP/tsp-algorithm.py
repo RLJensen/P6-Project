@@ -190,12 +190,9 @@ if __name__ == "__main__":
     setup_logger()
     logger = logger.PerformanceLogger()
     logger.start()
-    start_time = time.time()
     best_route, best_distance = genetic_algorithm(population_size, num_generations)
-    end_time = time.time()
     logging.info(f"Best Route: {best_route}")
     logging.info(f"Best Distance: {best_distance}")
-    logging.info(f"Time taken: {end_time - start_time} seconds")
     logs = logger.stop()
     #plot_route(best_route)
     # for log in logs:

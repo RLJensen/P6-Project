@@ -37,7 +37,7 @@ class PerformanceLogger:
         if self._thread is not None:
             self._thread.join()
         elapsedTime = time.time() - self.timer
-        logging.info(f"Workload FInished in {elapsedTime} seconds")
+        logging.info(f"Workload Finished in {elapsedTime} seconds")
     
     def update(self):
         while self._running:
