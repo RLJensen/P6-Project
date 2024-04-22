@@ -12,10 +12,6 @@ import os
 from multiprocessing import Queue
 from dotenv import load_dotenv
 
-workload_type = "TSP"
-uuid = str(uuid.uuid4())
-hostname = socket.gethostname()
-
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         record.hostname = hostname
@@ -51,6 +47,10 @@ def setup_logger():
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
+
+workload_type = "TSP"
+uuid = str(uuid.uuid4())
+hostname = socket.gethostname()
 
 # Read city coordinates from file
 def read_city_coordinates(filename, num_cities):

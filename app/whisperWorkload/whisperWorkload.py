@@ -6,6 +6,10 @@ import logger
 from googlesearch import search
 import uuid
 import socket
+import logging_loki
+import os
+from multiprocessing import Queue
+from dotenv import load_dotenv
 
 class CustomFormatter(logging.Formatter):
     def format(self, record):
@@ -18,10 +22,26 @@ def setup_logger():
     custom_logger = logging.getLogger()
     custom_logger.setLevel(logging.INFO)
 
+    load_dotenv()
+
     if custom_logger.hasHandlers():
         custom_logger.handlers.clear()
 
-    handler = logging.StreamHandler()
+    try:
+        handler = logging_loki.LokiQueueHandler(
+            Queue(), #halp får error Exception in thread Thread-1 (_monitor): Traceback (most recent call last):
+            url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
+            tags={"application": "Workload",
+                  "host": hostname,
+                  "workload": workload_type,
+                  "uuid": uuid},
+            auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
+            version="1",
+        )
+    except Exception as e:
+        print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
+        raise
+    
     formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
     handler.setFormatter(formatter)
 
