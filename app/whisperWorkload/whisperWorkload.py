@@ -4,20 +4,39 @@ import whisper
 import logging
 import logger
 from googlesearch import search
+import uuid
+import socket
+
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        record.hostname = hostname
+        record.workload_type = workload_type
+        record.uuid = uuid
+        return super().format(record)
+
+def setup_logger():
+    custom_logger = logging.getLogger()
+    custom_logger.setLevel(logging.INFO)
+
+    if custom_logger.hasHandlers():
+        custom_logger.handlers.clear()
+
+    handler = logging.StreamHandler()
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    custom_logger.addHandler(handler)
+
+workload_type = "Whisper"
+uuid = str(uuid.uuid4())
+hostname = socket.gethostname()
 
 def startWorkload():
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starting whisper workload")
     whisper = loadModel()
     whisperResult = whisper[0]
-    whisperLoad = whisper[1]
-    whisperSearchResult = whisper[2]
-    logging.info("Now starting Whisper workload")
+    whisperSearchResult = whisper[1]
     for key, value in whisperResult.items():
         print(key, ":", value)
-    
-    for info in whisperLoad:
-        logging.info(info)
 
     for info in whisperSearchResult:
         logging.info(info)
@@ -25,23 +44,22 @@ def startWorkload():
 def loadModel():
     files = os.listdir(os.getcwd())
     sound_file = random.choice([file for file in files if file.endswith('.mp3')])
-    logs = []
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
-    model = whisper.load_model("base",None,download_root="./")
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
+    model = whisper.load_model("tiny",None,download_root="./")
     result = model.transcribe(sound_file,fp16=False)
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
 
     whisperText = list(result.values())[0]
     searchresult = performSearch(whisperText)
-    return result, logs, searchresult
+    return result, searchresult
 
 def performSearch(query):
-    result = search(query,10,"en",None,False,10,5)
+    result = search(query,5,"en",None,False,10,5)
     return result
 
 if __name__ == "__main__":
+    setup_logger()
+    logger = logger.PerformanceLogger()
+    logger.start()
     startWorkload()
+    logs = logger.stop()
+    # for log in logs:
+    #     logging.info(log)

@@ -1,42 +1,58 @@
 import random
 import logging
 import logger
+import uuid
+import socket
+
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        record.hostname = hostname
+        record.workload_type = workload_type
+        record.uuid = uuid
+        return super().format(record)
+
+def setup_logger():
+    custom_logger = logging.getLogger()
+    custom_logger.setLevel(logging.INFO)
+
+    if custom_logger.hasHandlers():
+        custom_logger.handlers.clear()
+
+    handler = logging.StreamHandler()
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    custom_logger.addHandler(handler)
+
+workload_type = "Monte Carlo"
+uuid = str(uuid.uuid4())
+hostname = socket.gethostname()
 
 def startWorkload():
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    logging.info("Starting program")
-    count = random.randint(100,1000)
-
-    logObjects = estimateDice(10000,100,count)
-
-    for obj in logObjects:
-        logging.info(obj)
+    count = random.randint(1000000,5000000)
+    estimateDice(10000, 100, count)
 
 def estimateDice(funds,initial_wager,wager_count):
-    logs = []
-    currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-    logs.append(currentLog)
     value = funds
     wager = initial_wager
-    print('Wager count', wager_count)
-    print('Wager', wager)
-    print('Initial funds', value)
+    num_wins = 0
+    logging.info(f"Wager count: {wager_count}")
+    logging.info(f"Wager: {wager}")
+    logging.info(f"Initial funds: {value}")
 
     currentWager = 0
 
     while currentWager < wager_count:
-        currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-        logs.append(currentLog)
         if rollDice():
             value += wager
+            num_wins += 1
         else:
             value -= wager
-
         currentWager += 1
-        currentLog = logger.getCPUandRAMLoad(logger.getLoad())
-        logs.append(currentLog)
-    print('Final funds', value)
-    return logs
+
+    logging.info(f"Number of wins: {num_wins}")
+    logging.info(f"Number of losses: {wager_count - num_wins}")
+    logging.info(f"Final funds: {value}")
     
 def rollDice():
     roll = random.randint(1,100)
@@ -52,4 +68,10 @@ def rollDice():
         return True
     
 if __name__ == "__main__":
+    setup_logger()
+    logger = logger.PerformanceLogger()
+    logger.start()
     startWorkload()
+    logs = logger.stop()
+    # for log in logs:
+    #     logging.info(log)
