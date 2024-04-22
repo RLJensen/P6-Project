@@ -5,14 +5,13 @@ import itertools
 import time
 import logging
 import logger
-import matplotlib.pyplot as plt
-from mpl_toolkits.basemap import Basemap
 import uuid
 import socket
 
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         record.hostname = hostname
+        record.workload_type = workload_type
         record.uuid = uuid
         return super().format(record)
 
@@ -24,11 +23,12 @@ def setup_logger():
         custom_logger.handlers.clear()
 
     handler = logging.StreamHandler()
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(uuid)s - %(message)s')
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
 
+workload_type = "TSP"
 uuid = str(uuid.uuid4())
 hostname = socket.gethostname()
 
@@ -150,7 +150,7 @@ def genetic_algorithm(population_size, num_generations):
 
     return best_route, best_distance
 
-def plot_route(best_route):
+#def plot_route(best_route):
     plt.figure(figsize=(12, 8))
     m = Basemap(projection='mill', llcrnrlat=-90, urcrnrlat=90, llcrnrlon=-180, urcrnrlon=180)
     m.drawcoastlines()

@@ -7,6 +7,7 @@ import socket
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         record.hostname = hostname
+        record.workload_type = workload_type
         record.uuid = uuid
         return super().format(record)
 
@@ -18,16 +19,16 @@ def setup_logger():
         custom_logger.handlers.clear()
 
     handler = logging.StreamHandler()
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(uuid)s - %(message)s')
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
 
+workload_type = "Monte Carlo"
 uuid = str(uuid.uuid4())
 hostname = socket.gethostname()
 
 def startWorkload():
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     count = random.randint(1000000,5000000)
     estimateDice(10000, 100, count)
 

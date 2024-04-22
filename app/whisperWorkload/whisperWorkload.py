@@ -10,6 +10,7 @@ import socket
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         record.hostname = hostname
+        record.workload_type = workload_type
         record.uuid = uuid
         return super().format(record)
 
@@ -21,16 +22,16 @@ def setup_logger():
         custom_logger.handlers.clear()
 
     handler = logging.StreamHandler()
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(uuid)s - %(message)s')
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
 
+workload_type = "Whisper"
 uuid = str(uuid.uuid4())
 hostname = socket.gethostname()
 
 def startWorkload():
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     whisper = loadModel()
     whisperResult = whisper[0]
     whisperSearchResult = whisper[1]
@@ -43,7 +44,7 @@ def startWorkload():
 def loadModel():
     files = os.listdir(os.getcwd())
     sound_file = random.choice([file for file in files if file.endswith('.mp3')])
-    model = whisper.load_model("small",None,download_root="./")
+    model = whisper.load_model("tiny",None,download_root="./")
     result = model.transcribe(sound_file,fp16=False)
 
     whisperText = list(result.values())[0]
@@ -51,7 +52,7 @@ def loadModel():
     return result, searchresult
 
 def performSearch(query):
-    result = search(query,10,"en",None,False,10,5)
+    result = search(query,5,"en",None,False,10,5)
     return result
 
 if __name__ == "__main__":
