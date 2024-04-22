@@ -46,11 +46,10 @@ def read_city_coordinates(filename, num_cities):
 
 # Define parameters for the algorithm
 filename = 'cities.txt'
-num_cities = 7 #random.randint(10, 100) # Specify the number of cities you want to select
+num_cities = random.randint(10, 100) # Specify the number of cities you want to select
 logging.info(f"Number of cities: {num_cities}")
 cities = read_city_coordinates(filename, num_cities)
-#cities = {'Copenhagen': (55.6761, 12.5683), 'Manilla': (14.5995, 120.9842), 'New York': (40.7128, -74.0060),  'Tokyo': (35.6895, 139.6917), 'Cape Town': (-33.9249, 18.4241), 'Rio de Janeiro': (-22.9068, -43.1729), 'Canberra': (-35.2809, 149.1300)}
-population_size = 20 #random.randint(15, 20) # Number of routes in each generation
+population_size = random.randint(15, 20) # Number of routes in each generation
 logging.info(f"Population size: {population_size}")
 num_generations = 3 # Number of generations
 logging.info(f"Number of generations: {num_generations}")
