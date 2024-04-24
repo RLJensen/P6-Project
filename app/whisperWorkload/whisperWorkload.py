@@ -28,8 +28,7 @@ def setup_logger():
         custom_logger.handlers.clear()
 
     try:
-        handler = logging_loki.LokiQueueHandler(
-            Queue(), #halp får error Exception in thread Thread-1 (_monitor): Traceback (most recent call last):
+        handler = logging_loki.LokiHandler(
             url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
             tags={"application": "Workload",
                   "host": hostname,
