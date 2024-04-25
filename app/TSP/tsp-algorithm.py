@@ -140,7 +140,6 @@ def genetic_algorithm(population_size, num_generations):
 
     for gen in range(num_generations):
         logging.info(f"Generation {gen + 1}/{num_generations}")
-        
         # Evaluate fitness of the entire population
         evaluation_start_time = time.time()
         logging.info("Evaluating fitness of population...")
@@ -174,7 +173,4 @@ if __name__ == "__main__":
     best_route, best_distance = genetic_algorithm(population_size, num_generations)
     logging.info(f"Best Route: {best_route}")
     logging.info(f"Best Distance: {best_distance}")
-    logs = logger.stop()
-    #plot_route(best_route)
-    # for log in logs:
-    #     logging.info(log)
+    logger.stop()

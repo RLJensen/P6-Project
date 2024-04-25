@@ -5,7 +5,6 @@ import uuid
 import socket
 import logging_loki
 import os
-from multiprocessing import Queue
 from dotenv import load_dotenv
 
 class CustomFormatter(logging.Formatter):
@@ -18,6 +17,7 @@ class CustomFormatter(logging.Formatter):
 def setup_logger():
     custom_logger = logging.getLogger()
     custom_logger.setLevel(logging.INFO)
+    
     load_dotenv()
 
     if custom_logger.hasHandlers():
@@ -67,7 +67,7 @@ def estimateDice(funds,initial_wager,wager_count):
         else:
             value -= wager
         currentWager += 1
-
+    
     logging.info(f"Number of wins: {num_wins}")
     logging.info(f"Number of losses: {wager_count - num_wins}")
     logging.info(f"Final funds: {value}")
@@ -90,6 +90,4 @@ if __name__ == "__main__":
     logger = logger.PerformanceLogger()
     logger.start()
     startWorkload()
-    logs = logger.stop()
-    # for log in logs:
-    #     logging.info(log)
+    logger.stop()

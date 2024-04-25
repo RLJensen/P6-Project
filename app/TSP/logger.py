@@ -5,7 +5,7 @@ import threading
 import time
 
 def getLoad():
-    CPULoad = psutil.cpu_percent() 
+    CPULoad = psutil.cpu_percent()
     RAMLoad = psutil.virtual_memory().percent
     availableRAM = psutil.virtual_memory().available
     totalLoad = [CPULoad, RAMLoad, availableRAM]
@@ -34,5 +34,5 @@ class PerformanceLogger:
     def update(self):
         while self._running:
             self.loadData = getLoad()
-            logging.info(f"CPU and RAM Load Data CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM: {round(self.loadData[2]/1000000000,2)} GB")
+            logging.info(f"CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM: {round(self.loadData[2]/1000000000,2)} GB")
             time.sleep(0.2)

@@ -7,8 +7,6 @@ from googlesearch import search
 import uuid
 import socket
 import logging_loki
-import os
-from multiprocessing import Queue
 from dotenv import load_dotenv
 
 class CustomFormatter(logging.Formatter):
@@ -79,6 +77,4 @@ if __name__ == "__main__":
     logger = logger.PerformanceLogger()
     logger.start()
     startWorkload()
-    logs = logger.stop()
-    # for log in logs:
-    #     logging.info(log)
+    logger.stop()
