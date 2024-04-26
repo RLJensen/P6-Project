@@ -62,15 +62,11 @@ def read_city_coordinates(filename, num_cities):
             city_coordinates[city] = (latitude, longitude)
     return city_coordinates
 
-# Define parameters for the algorithm
 filename = 'cities.txt'
 num_cities = random.randint(10, 100) # Specify the number of cities you want to select
 logging.info(f"Number of cities: {num_cities}")
 cities = read_city_coordinates(filename, num_cities)
-population_size = random.randint(15, 20) # Number of routes in each generation
-logging.info(f"Population size: {population_size}")
-num_generations = 3 # Number of generations
-logging.info(f"Number of generations: {num_generations}")
+new_cities = random.sample()
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -91,7 +87,7 @@ def haversine_distance(city1, city2):
     return R * c
 
 # Calculate total distance of a route
-def total_distance(route):
+def total_distance(route, cities):
     total = 0
     for i in range(len(route) - 1):
         total += haversine_distance(cities[route[i]], cities[route[i+1]])
@@ -99,7 +95,7 @@ def total_distance(route):
     return total
 
 # Generate initial population
-def generate_initial_population(population_size):
+def generate_initial_population(population_size, cities):
     cities_list = list(cities.keys())
     population = []
     for _ in range(population_size):
@@ -129,12 +125,17 @@ def evolve_population(subpopulation):
     return offspring
 
 # Evaluate the population
-def evaluate_population(population):
-    return [(route, total_distance(route)) for route in population]
+def evaluate_population(population, cities):
+    return [(route, total_distance(route, cities)) for route in population]
 
 # Genetic algorithm
-def genetic_algorithm(population_size, num_generations):
-    population = generate_initial_population(population_size)
+def genetic_algorithm(cities):
+    population_size = random.randint(15, 20) # Number of routes in each generation
+    logging.info(f"Population size: {population_size}")
+    num_generations = 3 # Number of generations
+    logging.info(f"Number of generations: {num_generations}")
+
+    population = generate_initial_population(population_size, cities)
     best_route = None
     best_distance = float('inf')
 
@@ -143,7 +144,7 @@ def genetic_algorithm(population_size, num_generations):
         # Evaluate fitness of the entire population
         evaluation_start_time = time.time()
         logging.info("Evaluating fitness of population...")
-        evaluated_population = evaluate_population(population)
+        evaluated_population = evaluate_population(population, cities)
         evaluation_end_time = time.time()
         evaluation_time = evaluation_end_time - evaluation_start_time
         logging.info(f"Sequential fitness evaluation finished in {evaluation_time:.2f} seconds")
@@ -170,7 +171,7 @@ if __name__ == "__main__":
     setup_logger()
     logger = logger.PerformanceLogger()
     logger.start()
-    best_route, best_distance = genetic_algorithm(population_size, num_generations)
+    best_route, best_distance = genetic_algorithm(cities)
     logging.info(f"Best Route: {best_route}")
     logging.info(f"Best Distance: {best_distance}")
     logger.stop()
