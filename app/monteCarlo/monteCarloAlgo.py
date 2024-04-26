@@ -7,14 +7,6 @@ import logging_loki
 import os
 from dotenv import load_dotenv
 
-# Custom formatter to add additional fields to log records
-class CustomFormatter(logging.Formatter):
-    def format(self, record):
-        record.hostname = hostname
-        record.workload_type = workload_type
-        record.uuid = uuid
-        return super().format(record)
-
 # Setup logger with Loki handler
 def setup_logger():
     custom_logger = logging.getLogger()
@@ -39,7 +31,7 @@ def setup_logger():
         print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
         raise
     
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)

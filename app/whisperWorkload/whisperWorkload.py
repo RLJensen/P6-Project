@@ -9,14 +9,6 @@ import socket
 import logging_loki
 from dotenv import load_dotenv
 
-# Custom formatter to add additional fields to log records
-class CustomFormatter(logging.Formatter):
-    def format(self, record):
-        record.hostname = hostname
-        record.workload_type = workload_type
-        record.uuid = uuid
-        return super().format(record)
-
 # Setup logger with Loki handler
 def setup_logger():
     custom_logger = logging.getLogger()
@@ -41,7 +33,7 @@ def setup_logger():
         print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
         raise
     
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
@@ -53,9 +45,6 @@ hostname = socket.gethostname()
 
 def startWorkload():
     whisper = loadModel()
-    if(whisper == None):
-        logging.info("Failed to load model")
-        return
     whisperResult = whisper[0]
     whisperSearchResult = whisper[1]
     for key, value in whisperResult.items():
@@ -70,12 +59,12 @@ def loadModel():
     sound_files = [file for file in files if file.endswith('.mp3')]
 
     if not sound_files:  # Check if the list is empty
-        logging.error("No sound files found. Stopping workload.")
         raise FileNotFoundError("No MP3 sound files found in the directory.")
 
+    logging.info(f"Found {len(sound_files)} sound files: {sound_files}")
     sound_file = random.choice(sound_files)
-    model = whisper.load_model("tiny", None, download_root="./")
-    result = model.transcribe(sound_file, fp16=False)
+    model = whisper.load_model("tiny", None, download_root = "./")
+    result = model.transcribe(sound_file, fp16 = False)
 
     whisperText = list(result.values())[0]
     searchresult = performSearch(whisperText)
