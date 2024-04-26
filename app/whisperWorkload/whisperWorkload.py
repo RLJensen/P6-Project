@@ -60,9 +60,15 @@ def startWorkload():
 
 def loadModel():
     files = os.listdir(os.getcwd())
-    sound_file = random.choice([file for file in files if file.endswith('.mp3')])
-    model = whisper.load_model("tiny",None,download_root="./")
-    result = model.transcribe(sound_file,fp16=False)
+    sound_files = [file for file in files if file.endswith('.mp3')]
+
+    if not sound_files:  # Check if the list is empty
+        logging.error("No sound files found. Stopping workload.")
+        raise FileNotFoundError("No MP3 sound files found in the directory.")
+
+    sound_file = random.choice(sound_files)
+    model = whisper.load_model("tiny", None, download_root="./")
+    result = model.transcribe(sound_file, fp16=False)
 
     whisperText = list(result.values())[0]
     searchresult = performSearch(whisperText)
@@ -76,5 +82,9 @@ if __name__ == "__main__":
     setup_logger()
     logger = logger.PerformanceLogger()
     logger.start()
-    startWorkload()
-    logger.stop()
+    try:
+        startWorkload()
+        logger.stop()
+    except FileNotFoundError as e:
+        logging.error(str(e))
+        logger.stop()
