@@ -34,5 +34,10 @@ class PerformanceLogger:
     def update(self):
         while self._running:
             self.loadData = getLoad()
-            logging.info(f"CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM: {round(self.loadData[2]/1000000000,2)} GB")
+            logging.info(f"CPU: {self.loadData[0]}% RAM: {self.loadData[1]}% Available RAM: {round(self.loadData[2]/1000000000,2)} GB", 
+                         extra={"tags":
+                             {"CPU":f"{self.loadData[0]}%", 
+                              "RAM":f"{self.loadData[1]}%",
+                              "Available RAM":f"{round(self.loadData[2]/1000000000,2)} GB"
+                              }})
             time.sleep(0.2)

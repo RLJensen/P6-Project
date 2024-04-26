@@ -39,7 +39,7 @@ def setup_logger():
         print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
         raise
     
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
+    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
