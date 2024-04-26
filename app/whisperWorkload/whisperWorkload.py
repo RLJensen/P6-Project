@@ -53,6 +53,9 @@ hostname = socket.gethostname()
 
 def startWorkload():
     whisper = loadModel()
+    if(whisper == None):
+        logging.info("Failed to load model")
+        return
     whisperResult = whisper[0]
     whisperSearchResult = whisper[1]
     for key, value in whisperResult.items():
