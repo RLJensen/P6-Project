@@ -7,6 +7,9 @@ import logging
 import logger
 import uuid
 import socket
+import logging_loki
+import os
+from dotenv import load_dotenv
 
 class CustomFormatter(logging.Formatter):
     def format(self, record):
@@ -19,10 +22,25 @@ def setup_logger():
     custom_logger = logging.getLogger()
     custom_logger.setLevel(logging.INFO)
 
+    load_dotenv()
+
     if custom_logger.hasHandlers():
         custom_logger.handlers.clear()
 
-    handler = logging.StreamHandler()
+    try:
+        handler = logging_loki.LokiHandler(
+            url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
+            tags={"application": "Workload",
+                  "host": hostname,
+                  "workload": workload_type,
+                  "uuid": uuid},
+            auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
+            version="1",
+        )
+    except Exception as e:
+        print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
+        raise
+    
     formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
     handler.setFormatter(formatter)
 
@@ -122,7 +140,6 @@ def genetic_algorithm(population_size, num_generations):
 
     for gen in range(num_generations):
         logging.info(f"Generation {gen + 1}/{num_generations}")
-        
         # Evaluate fitness of the entire population
         evaluation_start_time = time.time()
         logging.info("Evaluating fitness of population...")
@@ -149,42 +166,6 @@ def genetic_algorithm(population_size, num_generations):
 
     return best_route, best_distance
 
-#def plot_route(best_route):
-    plt.figure(figsize=(12, 8))
-    m = Basemap(projection='mill', llcrnrlat=-90, urcrnrlat=90, llcrnrlon=-180, urcrnrlon=180)
-    m.drawcoastlines()
-    m.drawcountries()
-
-    for city in best_route:
-        lat = cities[city][0]
-        lon = cities[city][1]
-        x, y = m(lon, lat)
-        m.plot(x, y, 'ro', markersize=5)
-        plt.text(x, y, city, fontsize=12, color='b', ha='right', va='bottom') # type: ignore
-
-    for i in range(len(best_route) - 1):
-        city1 = best_route[i]
-        city2 = best_route[(i + 1)]
-        lat1, lon1 = cities[city1]
-        lat2, lon2 = cities[city2]
-        x1, y1 = m(lon1, lat1)
-        x2, y2 = m(lon2, lat2)
-        #m.plot([x1, x2], [y1, y2], color='r', linewidth=1)
-        plt.arrow(x1, y1, x2 - x1, y2 - y1, head_width=100000, head_length=100000, fc='b', ec='b') # type: ignore
-        plt.text((x1 + x2) / 2, (y1 + y2) / 2, str(i + 1), fontsize=12, color='r') # type: ignore
-
-    city1 = best_route[-1]
-    city2 = best_route[0]
-    lat1, lon1 = cities[city1]
-    lat2, lon2 = cities[city2]
-    x1, y1 = m(lon1, lat1)
-    x2, y2 = m(lon2, lat2)
-    plt.arrow(x1, y1, x2 - x1, y2 - y1, head_width=100000, head_length=100000, fc='b', ec='b') # type: ignore
-    plt.text((x1 + x2) / 2, (y1 + y2) / 2, 7, fontsize=12, color='r') # type: ignore
-
-    plt.title("Best Route")
-    plt.show()
-
 if __name__ == "__main__":
     setup_logger()
     logger = logger.PerformanceLogger()
@@ -192,7 +173,4 @@ if __name__ == "__main__":
     best_route, best_distance = genetic_algorithm(population_size, num_generations)
     logging.info(f"Best Route: {best_route}")
     logging.info(f"Best Distance: {best_distance}")
-    logs = logger.stop()
-    #plot_route(best_route)
-    # for log in logs:
-    #     logging.info(log)
+    logger.stop()
