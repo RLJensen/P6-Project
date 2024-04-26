@@ -9,6 +9,7 @@ import socket
 import logging_loki
 from dotenv import load_dotenv
 
+# Custom formatter to add additional fields to log records
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         record.hostname = hostname
@@ -16,6 +17,7 @@ class CustomFormatter(logging.Formatter):
         record.uuid = uuid
         return super().format(record)
 
+# Setup logger with Loki handler
 def setup_logger():
     custom_logger = logging.getLogger()
     custom_logger.setLevel(logging.INFO)
@@ -44,6 +46,7 @@ def setup_logger():
 
     custom_logger.addHandler(handler)
 
+# Information about workload, hostname and uuid
 workload_type = "Whisper"
 uuid = str(uuid.uuid4())
 hostname = socket.gethostname()
@@ -58,6 +61,7 @@ def startWorkload():
     for info in whisperSearchResult:
         logging.info(info)
 
+# Load the model and transcribe the sound file, if no sound file is found, raises an error
 def loadModel():
     files = os.listdir(os.getcwd())
     sound_files = [file for file in files if file.endswith('.mp3')]
@@ -74,6 +78,7 @@ def loadModel():
     searchresult = performSearch(whisperText)
     return result, searchresult
 
+# Perform a google search on the transcribed text
 def performSearch(query):
     result = search(query,5,"en",None,False,10,5)
     return result

@@ -3,6 +3,7 @@ import psutil
 import threading
 import time
 
+# Get CPU and RAM load
 def getLoad():
     CPULoad = psutil.cpu_percent()
     RAMLoad = psutil.virtual_memory().percent
@@ -16,6 +17,7 @@ class PerformanceLogger:
         self._thread = None
         self.timer = 0
     
+    # Start the workload with a new thread
     def start(self):
         self._running = True
         logging.info(f"Starting Workload")
@@ -23,6 +25,7 @@ class PerformanceLogger:
         self._thread = threading.Thread(target=self.update)
         self._thread.start()
 
+    # Stop the workload and join the thread
     def stop(self):
         self._running = False
         if self._thread is not None:
@@ -30,6 +33,7 @@ class PerformanceLogger:
         elapsedTime = time.time() - self.timer
         logging.info(f"Workload Finished in {elapsedTime} seconds")
     
+    # Update the logger with CPU and RAM load, will create a log every 0.2 seconds
     def update(self):
         while self._running:
             self.loadData = getLoad()

@@ -11,6 +11,7 @@ import logging_loki
 import os
 from dotenv import load_dotenv
 
+# Custom formatter to add additional fields to log records
 class CustomFormatter(logging.Formatter):
     def format(self, record):
         record.hostname = hostname
@@ -18,6 +19,7 @@ class CustomFormatter(logging.Formatter):
         record.uuid = uuid
         return super().format(record)
 
+# Setup logger with Loki handler
 def setup_logger():
     custom_logger = logging.getLogger()
     custom_logger.setLevel(logging.INFO)
@@ -46,6 +48,7 @@ def setup_logger():
 
     custom_logger.addHandler(handler)
 
+# Information about workload, hostname and uuid
 workload_type = "TSP"
 uuid = str(uuid.uuid4())
 hostname = socket.gethostname()
