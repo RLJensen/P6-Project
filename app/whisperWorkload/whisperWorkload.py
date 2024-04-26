@@ -33,6 +33,9 @@ hostname = socket.gethostname()
 
 def startWorkload():
     whisper = loadModel()
+    if(whisper == None):
+        logging.info("Failed to load model")
+        return
     whisperResult = whisper[0]
     whisperSearchResult = whisper[1]
     for key, value in whisperResult.items():
@@ -44,7 +47,11 @@ def startWorkload():
 def loadModel():
     files = os.listdir(os.getcwd())
     sound_file = random.choice([file for file in files if file.endswith('.mp3')])
-    model = whisper.load_model("tiny",None,download_root="./")
+    if(sound_file == None):
+        logging.info("No sound files found")
+        return None
+
+    model = whisper.load_model("small",None,download_root="./")
     result = model.transcribe(sound_file,fp16=False)
 
     whisperText = list(result.values())[0]
