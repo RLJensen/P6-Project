@@ -66,7 +66,6 @@ filename = 'cities.txt'
 num_cities = random.randint(10, 100) # Specify the number of cities you want to select
 logging.info(f"Number of cities: {num_cities}")
 cities = read_city_coordinates(filename, num_cities)
-new_cities = random.sample()
 
 # Calculate distance between two cities
 def distance(city1, city2):
@@ -115,7 +114,7 @@ def evolve_population(subpopulation):
         child1 = route1[:crossover_point] + [city for city in route2 if city not in route1[:crossover_point]]
         child2 = route2[:crossover_point] + [city for city in route1 if city not in route2[:crossover_point]]
         offspring.extend([child1, child2])
-
+        
     # Perform mutation
     for i in range(len(offspring)):
         if random.random() < 0.2:

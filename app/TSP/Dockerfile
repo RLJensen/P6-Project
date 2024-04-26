@@ -9,4 +9,4 @@ COPY tsp-algorithm.py .
 COPY logger.py .
 COPY cities.txt .
 
-CMD ["python", "tsp-algorithm.py"]
+CMD ["python", "tspAlgorithm.py"]
