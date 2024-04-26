@@ -71,6 +71,8 @@ def estimateDice(funds,initial_wager,wager_count):
     logging.info(f"Number of wins: {num_wins}")
     logging.info(f"Number of losses: {wager_count - num_wins}")
     logging.info(f"Final funds: {value}")
+
+    return value, num_wins
     
 def rollDice():
     roll = random.randint(1,100)
@@ -81,7 +83,7 @@ def rollDice():
     elif roll <= 50:
         # print(roll,'roll was 1-50, you lose.')
         return False
-    elif 100 > roll >= 50:
+    elif 100 > roll > 50:
         # print(roll,'roll was 51-99, you win! *pretty lights flash* (play more!)')
         return True
     
