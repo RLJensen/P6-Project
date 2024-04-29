@@ -63,6 +63,7 @@ def loadModel():
 
     logging.info(f"Found {len(sound_files)} sound files: {sound_files}")
     sound_file = random.choice(sound_files)
+    logging.info(f"Selected sound file: {sound_file}")
     model = whisper.load_model("tiny", None, download_root = "./")
     result = model.transcribe(sound_file, fp16 = False)
 
