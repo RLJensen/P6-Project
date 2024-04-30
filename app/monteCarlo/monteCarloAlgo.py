@@ -7,13 +7,7 @@ import logging_loki
 import os
 from dotenv import load_dotenv
 
-class CustomFormatter(logging.Formatter):
-    def format(self, record):
-        record.hostname = hostname
-        record.workload_type = workload_type
-        record.uuid = uuid
-        return super().format(record)
-
+# Setup logger with Loki handler
 def setup_logger():
     custom_logger = logging.getLogger()
     custom_logger.setLevel(logging.INFO)
@@ -37,11 +31,12 @@ def setup_logger():
         print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
         raise
     
-    formatter = CustomFormatter('%(asctime)s - %(levelname)s - %(hostname)s - %(workload_type)s - %(uuid)s - %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     custom_logger.addHandler(handler)
 
+# Information about workload, hostname and uuid
 workload_type = "Monte Carlo"
 uuid = str(uuid.uuid4())
 hostname = socket.gethostname()
