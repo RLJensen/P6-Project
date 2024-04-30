@@ -1,3 +1,1 @@
-NAME            READY   STATUS      RESTARTS    AGE     LABELS
-SomeName        1/1     Running     0           3m2s    app=somethingsomething
-SomeName1       1/1     Terminated  0           3m2s    app=somethingsomething
+Woops! I have deleted the content!

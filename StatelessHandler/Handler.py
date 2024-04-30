@@ -43,7 +43,9 @@ def getPods():
     f.write("Woops! I have deleted the content!")
     f.close()
 
+    f = open("C:/Users/raser/Documents/GitHub/P6-Project/StatelessHandler/test.txt", "r")
     print(f.read())
 
+getPods()
 if __name__ == "__Handler__":
     Handler()
