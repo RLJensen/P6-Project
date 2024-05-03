@@ -41,7 +41,7 @@ def setup_logger():
 # Information about workload, hostname and uuid
 workload_type = "Whisper"
 uuid = str(uuid.uuid4())
-hostname = socket.gethostname()
+hostname = os.environ['hostname']
 
 def startWorkload():
     whisper = loadModel()
