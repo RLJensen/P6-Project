@@ -6,7 +6,6 @@ import time
 import logging
 import logger
 import uuid
-import socket
 import logging_loki
 import os
 from dotenv import load_dotenv
