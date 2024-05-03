@@ -2,7 +2,6 @@ import logging
 import psutil
 import threading
 import time
-import os
 
 # Get CPU and RAM load
 def getLoad():
