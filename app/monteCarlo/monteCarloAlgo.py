@@ -39,7 +39,7 @@ def setup_logger():
 # Information about workload, hostname and uuid
 workload_type = "Monte Carlo"
 uuid = str(uuid.uuid4())
-hostname = socket.gethostname()
+hostname = os.popen("hostname -I")
 
 def startWorkload():
     count = random.randint(1000000,5000000)
