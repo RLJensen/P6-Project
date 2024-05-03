@@ -6,7 +6,6 @@ import time
 import logging
 import logger
 import uuid
-import socket
 import logging_loki
 import os
 from dotenv import load_dotenv
@@ -43,7 +42,7 @@ def setup_logger():
 # Information about workload, hostname and uuid
 workload_type = "TSP"
 uuid = str(uuid.uuid4())
-hostname = socket.gethostname()
+hostname = hostname = os.environ['hostname']
 
 # Read city coordinates from file
 def read_city_coordinates(filename, num_cities):

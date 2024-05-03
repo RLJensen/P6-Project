@@ -5,7 +5,7 @@ WORKDIR /TSP
 ADD requirements.txt /TSP/requirements.txt
 RUN pip install -r requirements.txt
 
-COPY tsp-algorithm.py .
+COPY tspAlgorithm.py .
 COPY logger.py .
 COPY cities.txt .
 

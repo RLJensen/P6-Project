@@ -2,7 +2,6 @@ import random
 import logging
 import logger
 import uuid
-import socket
 import logging_loki
 import os
 from dotenv import load_dotenv
@@ -39,7 +38,7 @@ def setup_logger():
 # Information about workload, hostname and uuid
 workload_type = "Monte Carlo"
 uuid = str(uuid.uuid4())
-hostname = socket.gethostname()
+hostname = os.environ['hostname']
 
 def startWorkload():
     count = random.randint(1000000,5000000)
@@ -73,13 +72,10 @@ def rollDice():
     roll = random.randint(1,100)
 
     if roll == 100:
-        # print(roll,'roll was 100, you lose. What are the odds?! Play again!')
         return False
     elif roll <= 50:
-        # print(roll,'roll was 1-50, you lose.')
         return False
     elif 100 > roll > 50:
-        # print(roll,'roll was 51-99, you win! *pretty lights flash* (play more!)')
         return True
     
 if __name__ == "__main__":
