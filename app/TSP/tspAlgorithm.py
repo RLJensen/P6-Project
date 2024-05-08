@@ -26,6 +26,7 @@ def setup_logger():
             tags={"application": "Workload",
                   "host": hostname,
                   "workload": workload_type,
+                  "affinity":"worker1",
                   "uuid": uuid},
             auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
             version="1",
