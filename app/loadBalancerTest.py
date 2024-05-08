@@ -2,8 +2,11 @@ import requests
 import os
 from dotenv import load_dotenv
 
+loki_url = "http://logs-prod-025.grafana.net/loki/api/v1/query_range"
+query ='{application="workload"} |= `` | sort_desc'
+
 params = {
-    "query": load_dotenv('query'),
+    "query": query,
     "limit": 100,
     "direction": "backward",
 }
@@ -13,11 +16,7 @@ auth = (
     load_dotenv('GRAFANACLOUD_PASS')
 )
 
-headers = {
-    "Authorization": f"Bearer {bearer_token}"
-}
-
-response = requests.get(load_dotenv('loki_url'), params=params,auth=auth)
+response = requests.get(loki_url, params=params,auth=auth)
 
 if response.status_code == 200:
     # Print the response content
