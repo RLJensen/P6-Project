@@ -4,7 +4,6 @@ import types
 import whisperWorkload
 
 class TestWhisper(unittest.TestCase):
-
     @patch('whisperWorkload.whisper.load_model')
     @patch('whisperWorkload.random.choice')
     def test_loadModel(self, mock_choice, mock_load_model):
