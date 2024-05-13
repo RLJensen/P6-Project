@@ -48,13 +48,16 @@ hostname = os.environ['hostname']
 # Read city coordinates from file
 def read_city_coordinates(filename, num_cities):
     city_coordinates = {}
-    with open(filename, 'r') as file:
-        for line in file.readlines()[:num_cities]:
-            parts = line.strip().split(',')
-            city = parts[0]
-            latitude = float(parts[1])
-            longitude = float(parts[2])
-            city_coordinates[city] = (latitude, longitude)
+    try:
+        with open(filename, 'r') as file:
+            for line in file.readlines()[:num_cities]:
+                parts = line.strip().split(',')
+                city = parts[0]
+                latitude = float(parts[1])
+                longitude = float(parts[2])
+                city_coordinates[city] = (latitude, longitude)
+    except Exception as e:
+        logging.error(f"Error: {e}")
     return city_coordinates
 
 filename = 'cities.txt'
@@ -104,18 +107,23 @@ def evolve_population(subpopulation):
     selected_routes = random.sample(subpopulation, len(subpopulation) // 2)
 
     # Perform order crossover
-    for route1, route2 in itertools.combinations(selected_routes, 2):
-        crossover_point = random.randint(1, len(route1) - 1)
-        child1 = route1[:crossover_point] + [city for city in route2 if city not in route1[:crossover_point]]
-        child2 = route2[:crossover_point] + [city for city in route1 if city not in route2[:crossover_point]]
-        offspring.extend([child1, child2])
-        
+    try:
+        for route1, route2 in itertools.combinations(selected_routes, 2):
+            crossover_point = random.randint(1, len(route1) - 1)
+            child1 = route1[:crossover_point] + [city for city in route2 if city not in route1[:crossover_point]]
+            child2 = route2[:crossover_point] + [city for city in route1 if city not in route2[:crossover_point]]
+            offspring.extend([child1, child2])
+    except Exception as e:
+        logging.error(f"Error: {e}")
+
     # Perform mutation
-    for i in range(len(offspring)):
-        if random.random() < 0.2:
-            idx1, idx2 = random.sample(range(len(offspring[i])), 2)
-            offspring[i][idx1], offspring[i][idx2] = offspring[i][idx2], offspring[i][idx1]
-    
+    try:
+        for i in range(len(offspring)):
+            if random.random() < 0.2:
+                idx1, idx2 = random.sample(range(len(offspring[i])), 2)
+                offspring[i][idx1], offspring[i][idx2] = offspring[i][idx2], offspring[i][idx1]
+    except Exception as e:
+        logging.error(f"Error: {e}")
     return offspring
 
 # Evaluate the population
@@ -132,30 +140,32 @@ def genetic_algorithm(cities):
     population = generate_initial_population(population_size, cities)
     best_route = None
     best_distance = float('inf')
+    try:
+        for gen in range(num_generations):
+            logging.info(f"Generation {gen + 1}/{num_generations}")
+            # Evaluate fitness of the entire population
+            evaluation_start_time = time.time()
+            logging.info("Evaluating fitness of population...")
+            evaluated_population = evaluate_population(population, cities)
+            evaluation_end_time = time.time()
+            evaluation_time = evaluation_end_time - evaluation_start_time
+            logging.info(f"Sequential fitness evaluation finished in {evaluation_time:.2f} seconds")
+            
+            # Update population with evaluated routes
+            population = [route for route, _ in evaluated_population]
 
-    for gen in range(num_generations):
-        logging.info(f"Generation {gen + 1}/{num_generations}")
-        # Evaluate fitness of the entire population
-        evaluation_start_time = time.time()
-        logging.info("Evaluating fitness of population...")
-        evaluated_population = evaluate_population(population, cities)
-        evaluation_end_time = time.time()
-        evaluation_time = evaluation_end_time - evaluation_start_time
-        logging.info(f"Sequential fitness evaluation finished in {evaluation_time:.2f} seconds")
-        
-        # Update population with evaluated routes
-        population = [route for route, _ in evaluated_population]
+            # Find the best route in the evaluated population
+            for route, distance in evaluated_population:
+                if distance < best_distance:
+                    best_distance = distance
+                    best_route = route
+    except Exception as e:
+        logging.error(f"Error: {e}")
 
-        # Find the best route in the evaluated population
-        for route, distance in evaluated_population:
-            if distance < best_distance:
-                best_distance = distance
-                best_route = route
+    logging.info(f"Best distance in generation {gen + 1}: {best_distance}")
 
-        logging.info(f"Best distance in generation {gen + 1}: {best_distance}")
-
-        # Evolve the population
-        population = evolve_population(population)
+    # Evolve the population
+    population = evolve_population(population)
 
     logging.info("Genetic algorithm finished.")
 
