@@ -1,0 +1,348 @@
+{
+    "status": "success",
+    "data": {
+        "resultType": "streams",
+        "result": [
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "61.2",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "898abc1a-7354-487b-b8ed-4a0c7677a3c1",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246288101676288",
+                        "2024-05-09 09:18:08,101 - INFO - CPU: 61.2% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "62.0",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "30bc69f9-01db-429f-9372-57b62e0dd386",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246288054176768",
+                        "2024-05-09 09:18:08,053 - INFO - CPU: 62.0% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "76.2",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "8e41b641-e9bc-4dee-b40b-ad051a894c0a",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246286421782784",
+                        "2024-05-09 09:18:06,421 - INFO - CPU: 76.2% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "77.2",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "30bc69f9-01db-429f-9372-57b62e0dd386",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246286203998208",
+                        "2024-05-09 09:18:06,203 - INFO - CPU: 77.2% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "77.5",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "8e41b641-e9bc-4dee-b40b-ad051a894c0a",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246286152978688",
+                        "2024-05-09 09:18:06,152 - INFO - CPU: 77.5% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "78.1",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "898abc1a-7354-487b-b8ed-4a0c7677a3c1",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246286228258304",
+                        "2024-05-09 09:18:06,228 - INFO - CPU: 78.1% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "79.2",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "8e41b641-e9bc-4dee-b40b-ad051a894c0a",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246287751383808",
+                        "2024-05-09 09:18:07,751 - INFO - CPU: 79.2% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "79.4",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "30bc69f9-01db-429f-9372-57b62e0dd386",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246287728992256",
+                        "2024-05-09 09:18:07,728 - INFO - CPU: 79.4% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "2.85",
+                    "CPU": "79.8",
+                    "RAM": "28.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "worker3",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "30bc69f9-01db-429f-9372-57b62e0dd386",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715246286867592192",
+                        "2024-05-09 09:18:06,867 - INFO - CPU: 79.8% RAM: 28.4% Available RAM: 2.85 GB"
+                    ]
+                ]
+            }
+        ],
+        "stats": {
+            "summary": {
+                "bytesProcessedPerSecond": 8505645,
+                "linesProcessedPerSecond": 116120,
+                "totalBytesProcessed": 73688,
+                "totalLinesProcessed": 1006,
+                "execTime": 0.008663,
+                "queueTime": 0.000114,
+                "subqueries": 0,
+                "totalEntriesReturned": 100,
+                "splits": 0,
+                "shards": 0,
+                "totalPostFilterLines": 1006,
+                "totalStructuredMetadataBytesProcessed": 0
+            },
+            "querier": {
+                "store": {
+                    "totalChunksRef": 0,
+                    "totalChunksDownloaded": 0,
+                    "chunksDownloadTime": 0,
+                    "queryReferencedStructuredMetadata": false,
+                    "chunk": {
+                        "headChunkBytes": 0,
+                        "headChunkLines": 0,
+                        "decompressedBytes": 0,
+                        "decompressedLines": 0,
+                        "compressedBytes": 0,
+                        "totalDuplicates": 100,
+                        "postFilterLines": 0,
+                        "headChunkStructuredMetadataBytes": 0,
+                        "decompressedStructuredMetadataBytes": 0
+                    },
+                    "chunkRefsFetchTime": 1431393,
+                    "congestionControlLatency": 0,
+                    "pipelineWrapperFilteredLines": 0
+                }
+            },
+            "ingester": {
+                "totalReached": 3,
+                "totalChunksMatched": 822,
+                "totalBatches": 2,
+                "totalLinesSent": 200,
+                "store": {
+                    "totalChunksRef": 0,
+                    "totalChunksDownloaded": 0,
+                    "chunksDownloadTime": 0,
+                    "queryReferencedStructuredMetadata": false,
+                    "chunk": {
+                        "headChunkBytes": 73688,
+                        "headChunkLines": 1006,
+                        "decompressedBytes": 0,
+                        "decompressedLines": 0,
+                        "compressedBytes": 0,
+                        "totalDuplicates": 0,
+                        "postFilterLines": 1006,
+                        "headChunkStructuredMetadataBytes": 0,
+                        "decompressedStructuredMetadataBytes": 0
+                    },
+                    "chunkRefsFetchTime": 0,
+                    "congestionControlLatency": 0,
+                    "pipelineWrapperFilteredLines": 0
+                }
+            },
+            "cache": {
+                "chunk": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "index": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "result": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "statsResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "volumeResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "seriesResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "labelResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                },
+                "instantMetricResult": {
+                    "entriesFound": 0,
+                    "entriesRequested": 0,
+                    "entriesStored": 0,
+                    "bytesReceived": 0,
+                    "bytesSent": 0,
+                    "requests": 0,
+                    "downloadTime": 0,
+                    "queryLengthServed": 0
+                }
+            },
+            "index": {
+                "totalChunks": 0,
+                "postFilterChunks": 0,
+                "shardsDuration": 0
+            }
+        }
+    }
+}

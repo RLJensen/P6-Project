@@ -39,7 +39,7 @@ def setup_logger():
 # Information about workload, hostname and uuid
 workload_type = "Monte Carlo"
 uuid = str(uuid.uuid4())
-hostname = os.environ['hostname']
+hostname = os.getenv('hostname', 'unknown')
 
 def startWorkload():
     count = random.randint(1000000,5000000)
@@ -82,10 +82,8 @@ def roll3Dice():
     
 if __name__ == "__main__":
     setup_logger()
-    logger = logger.PerformanceLogger()
-    logger.start()
+    name = logger.PerformanceLogger()
+    name.start()
     startWorkload()
-    logger.stop()
-
-    
+    name.stop()
 

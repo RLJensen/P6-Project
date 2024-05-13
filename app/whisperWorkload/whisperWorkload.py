@@ -42,7 +42,7 @@ def setup_logger():
 # Information about workload, hostname and uuid
 workload_type = "Whisper"
 uuid = str(uuid.uuid4())
-hostname = os.environ['hostname']
+hostname = os.getenv('hostname', 'unknown')
 
 def startWorkload():
     whisper = loadModel()
