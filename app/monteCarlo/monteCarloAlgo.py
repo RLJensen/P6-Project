@@ -45,39 +45,40 @@ def startWorkload():
     count = random.randint(1000000,5000000)
     estimateDice(10000, 100, count)
 
-def estimateDice(funds,initial_wager,wager_count):
+def estimateDice(funds,initial_wager,count):
     value = funds
     wager = initial_wager
     num_wins = 0
-    logging.info(f"Wager count: {wager_count}")
+    logging.info(f"Wager count: {count}")
     logging.info(f"Wager: {wager}")
     logging.info(f"Initial funds: {value}")
+    try:
+        rollLog = [0] * 19
 
-    currentWager = 0
+        for r in range(count):
+            rollresult = roll3Dice()
+            rollLog[rollresult] += 1
+            if rollresult >= 15:
+                num_wins += 1
+                value += wager
+            else:
+                value -= wager
+            
+    except Exception as e:
+        logging.error(f"Error: {e}")
 
-    while currentWager < wager_count:
-        if rollDice():
-            value += wager
-            num_wins += 1
-        else:
-            value -= wager
-        currentWager += 1
-    
     logging.info(f"Number of wins: {num_wins}")
-    logging.info(f"Number of losses: {wager_count - num_wins}")
+    logging.info(f"Number of losses: {count - num_wins}")
     logging.info(f"Final funds: {value}")
-
-    return value, num_wins
-    
+    for i, value in enumerate(rollLog):
+        if i > 2:
+            logging.info(f"estimate of {i} happpens {round(value / count * 100, 5)}% of the time")
+        
 def rollDice():
-    roll = random.randint(1,100)
+    return random.randint(1,6)
 
-    if roll == 100:
-        return False
-    elif roll <= 50:
-        return False
-    elif 100 > roll > 50:
-        return True
+def roll3Dice():
+    return rollDice() + rollDice() + rollDice()
     
 if __name__ == "__main__":
     setup_logger()
@@ -85,3 +86,4 @@ if __name__ == "__main__":
     name.start()
     startWorkload()
     name.stop()
+
