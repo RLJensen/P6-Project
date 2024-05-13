@@ -56,17 +56,24 @@ def startWorkload():
 
 # Load the model and transcribe the sound file, if no sound file is found, raises an error
 def loadModel():
-    files = os.listdir(os.getcwd())
-    sound_files = [file for file in files if file.endswith('.mp3')]
+    try:
+        files = os.listdir(os.getcwd())
+        sound_files = [file for file in files if file.endswith('.mp3')]
+    except Exception as e:
+        logging.error(f"error: {e}")
 
     if not sound_files:  # Check if the list is empty
+        logging.error("Error: List of MP3 sound files is empty")
         raise FileNotFoundError("No MP3 sound files found in the directory.")
 
-    logging.info(f"Found {len(sound_files)} sound files: {sound_files}")
-    sound_file = random.choice(sound_files)
-    logging.info(f"Selected sound file: {sound_file}")
-    model = whisper.load_model("tiny", None, download_root = "./")
-    result = model.transcribe(sound_file, fp16 = False)
+    try:    
+        logging.info(f"Found {len(sound_files)} sound files: {sound_files}")
+        sound_file = random.choice(sound_files)
+        logging.info(f"Selected sound file: {sound_file}")
+        model = whisper.load_model("tiny", None, download_root = "./")
+        result = model.transcribe(sound_file, fp16 = False)
+    except Exception as e:
+        logging.error(f"Error: {e}")
 
     whisperText = list(result.values())[0]
     searchresult = performSearch(whisperText)
