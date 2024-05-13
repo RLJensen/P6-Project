@@ -53,19 +53,17 @@ def estimateDice(funds,initial_wager,count):
     logging.info(f"Wager: {wager}")
     logging.info(f"Initial funds: {value}")
     try:
-        rollLog = [0] * 18
+        rollLog = [0] * 19
 
         for r in range(count):
             rollresult = roll3Dice()
-            rollLog[rollresult - 1] += 1
+            rollLog[rollresult] += 1
             if rollresult >= 15:
                 num_wins += 1
                 value += wager
             else:
                 value -= wager
             
-        for i in rollLog:
-            rollLog[i] = rollLog[i] / count * 100
     except Exception as e:
         logging.error(f"Error: {e}")
 
@@ -73,8 +71,8 @@ def estimateDice(funds,initial_wager,count):
     logging.info(f"Number of losses: {count - num_wins}")
     logging.info(f"Final funds: {value}")
     for i, value in enumerate(rollLog):
-        if i >= 2:
-            logging.info(f"estimate of {i} happpens {value}% of the time")
+        if i > 2:
+            logging.info(f"estimate of {i} happpens {round(value / count * 100, 5)}% of the time")
         
 def rollDice():
     return random.randint(1,6)
