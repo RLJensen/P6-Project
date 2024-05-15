@@ -5,1964 +5,1406 @@
         "result": [
             {
                 "stream": {
-                    "affinity": "worker3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker3",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248542223433984",
-                        "2024-05-09 09:55:42,222 - INFO - Workload Finished in 84.32640814781189 seconds"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker1",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "5fe0ac7f-f08f-4cb0-9a1c-1247cf82f064",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248536268193280",
-                        "2024-05-09 09:55:36,266 - INFO - Workload Finished in 83.99241209030151 seconds"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248562109683968",
-                        "2024-05-09 09:56:02,109 - INFO - Workload Finished in 273.4526295661926 seconds"
+                        "1715602173694175488",
+                        "2024-05-13 14:09:33,694 - INFO - Workload Finished in 8.548184633255005 seconds"
                     ],
                     [
-                        "1715248561947548160",
-                        "2024-05-09 09:56:01,947 - INFO - Best Distance: 423698.7512472457"
+                        "1715602173485958912",
+                        "2024-05-13 14:09:33,454 - INFO - estimate of 18 happpens (0, 5)% of the time"
                     ],
                     [
-                        "1715248561909268224",
-                        "2024-05-09 09:56:01,877 - INFO - Best Route: ['Baghdad', 'Baku', 'Taipei', 'Kuala Lumpur', 'Yaounde', 'Bogota', 'Pyongyang', 'Seoul', 'Kyiv', 'Kuwait City', 'La Paz', 'Kinshasa', 'Nairobi', 'Paris', 'Jakarta', 'Lusaka', 'Harare', 'Amman', 'Ouagadougou', 'Abuja', 'Lisbon', 'London', 'Lima', 'Santiago', 'Accra', 'Khartoum', 'Berlin', 'Moscow', 'Buenos Aires', 'Santo Domingo', 'Athens', 'Tokyo', 'Hanoi', 'Algiers', 'Brasilia', 'Quito', 'Washington', 'Mexico City', 'Abidjan', 'Mogadishu', 'Caracas', 'Luanda', 'Phnom Penh', 'Beijing', 'Hong Kong', 'Antananarivo', 'Budapest', 'Dhaka', 'Madrid', 'Ankara', 'Sanaa', 'Riyadh', 'Bamako', 'Minsk', 'Colombo', 'Tehran', 'Addis Ababa', 'Singapore', 'Rome', 'Tashkent', 'Kabul', 'Havana', 'Guatemala City', 'Cairo', 'Rangoon', 'Bangkok', 'Dar es Salaam', 'Manila']"
+                        "1715602173439159808",
+                        "2024-05-13 14:09:33,439 - INFO - estimate of 17 happpens (1, 5)% of the time"
                     ],
                     [
-                        "1715248560625169152",
-                        "2024-05-09 09:56:00,624 - INFO - Genetic algorithm finished."
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "9.6",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248539085554176",
-                        "2024-05-09 09:55:39,084 - INFO - CPU: 9.6% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "8.9",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248536706209792",
-                        "2024-05-09 09:55:36,705 - INFO - CPU: 8.9% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "7.6",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248536473010944",
-                        "2024-05-09 09:55:36,472 - INFO - CPU: 7.6% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "7.5",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248540278400000",
-                        "2024-05-09 09:55:40,277 - INFO - CPU: 7.5% RAM: 33.9% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "6.5",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248541981719296",
-                        "2024-05-09 09:55:41,981 - INFO - CPU: 6.5% RAM: 33.9% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "6.3",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248536944835584",
-                        "2024-05-09 09:55:36,944 - INFO - CPU: 6.3% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "5.4",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248537417897472",
-                        "2024-05-09 09:55:37,417 - INFO - CPU: 5.4% RAM: 33.8% Available RAM: 2.63 GB"
+                        "1715602173415968768",
+                        "2024-05-13 14:09:33,415 - INFO - estimate of 16 happpens (3, 5)% of the time"
                     ],
                     [
-                        "1715248536235140096",
-                        "2024-05-09 09:55:36,234 - INFO - CPU: 5.4% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "5.3",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248538129772032",
-                        "2024-05-09 09:55:38,129 - INFO - CPU: 5.3% RAM: 33.8% Available RAM: 2.63 GB"
+                        "1715602173386876672",
+                        "2024-05-13 14:09:33,386 - INFO - estimate of 15 happpens (5, 5)% of the time"
                     ],
                     [
-                        "1715248537183456512",
-                        "2024-05-09 09:55:37,183 - INFO - CPU: 5.3% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "4.3",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248541743423232",
-                        "2024-05-09 09:55:41,742 - INFO - CPU: 4.3% RAM: 33.9% Available RAM: 2.63 GB"
+                        "1715602173371679232",
+                        "2024-05-13 14:09:33,371 - INFO - estimate of 14 happpens (7, 5)% of the time"
                     ],
                     [
-                        "1715248539802016256",
-                        "2024-05-09 09:55:39,801 - INFO - CPU: 4.3% RAM: 33.9% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "4.3",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248538847190784",
-                        "2024-05-09 09:55:38,846 - INFO - CPU: 4.3% RAM: 33.8% Available RAM: 2.63 GB"
+                        "1715602173338316032",
+                        "2024-05-13 14:09:33,338 - INFO - estimate of 13 happpens (10, 5)% of the time"
                     ],
                     [
-                        "1715248537891782656",
-                        "2024-05-09 09:55:37,891 - INFO - CPU: 4.3% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "31.5",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248540518139392",
-                        "2024-05-09 09:55:40,517 - INFO - CPU: 31.5% RAM: 33.9% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "3.2",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248540996265216",
-                        "2024-05-09 09:55:40,995 - INFO - CPU: 3.2% RAM: 33.9% Available RAM: 2.63 GB"
+                        "1715602173322206208",
+                        "2024-05-13 14:09:33,322 - INFO - estimate of 12 happpens (12, 5)% of the time"
                     ],
                     [
-                        "1715248540756002048",
-                        "2024-05-09 09:55:40,755 - INFO - CPU: 3.2% RAM: 33.9% Available RAM: 2.63 GB"
+                        "1715602173298384640",
+                        "2024-05-13 14:09:33,298 - INFO - estimate of 11 happpens (13, 5)% of the time"
+                    ],
+                    [
+                        "1715602173275309568",
+                        "2024-05-13 14:09:33,275 - INFO - estimate of 10 happpens (13, 5)% of the time"
+                    ],
+                    [
+                        "1715602173242217216",
+                        "2024-05-13 14:09:33,227 - INFO - estimate of 9 happpens (12, 5)% of the time"
+                    ],
+                    [
+                        "1715602173194610176",
+                        "2024-05-13 14:09:33,194 - INFO - estimate of 8 happpens (10, 5)% of the time"
+                    ],
+                    [
+                        "1715602173161538560",
+                        "2024-05-13 14:09:33,161 - INFO - estimate of 7 happpens (7, 5)% of the time"
+                    ],
+                    [
+                        "1715602173129681152",
+                        "2024-05-13 14:09:33,129 - INFO - estimate of 6 happpens (5, 5)% of the time"
+                    ],
+                    [
+                        "1715602173113320192",
+                        "2024-05-13 14:09:33,113 - INFO - estimate of 5 happpens (3, 5)% of the time"
+                    ],
+                    [
+                        "1715602173082151680",
+                        "2024-05-13 14:09:33,082 - INFO - estimate of 4 happpens (1, 5)% of the time"
+                    ],
+                    [
+                        "1715602173065771776",
+                        "2024-05-13 14:09:33,065 - INFO - estimate of 3 happpens (0, 5)% of the time"
+                    ],
+                    [
+                        "1715602173033531648",
+                        "2024-05-13 14:09:33,033 - INFO - Final funds: -355141300"
+                    ],
+                    [
+                        "1715602173016674816",
+                        "2024-05-13 14:09:33,016 - INFO - Number of losses: 3955253"
+                    ],
+                    [
+                        "1715602172985426432",
+                        "2024-05-13 14:09:32,985 - INFO - Number of wins: 403740"
+                    ],
+                    [
+                        "1715602165256166400",
+                        "2024-05-13 14:09:25,256 - INFO - Initial funds: 10000"
+                    ],
+                    [
+                        "1715602165224860160",
+                        "2024-05-13 14:09:25,192 - INFO - Wager: 100"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "3.2",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker3",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248537654014720",
-                        "2024-05-09 09:55:37,653 - INFO - CPU: 3.2% RAM: 33.8% Available RAM: 2.63 GB"
+                        "1715602206752698368",
+                        "2024-05-13 14:10:06,752 - INFO - Workload Finished in 8.004614353179932 seconds"
+                    ],
+                    [
+                        "1715602206479153920",
+                        "2024-05-13 14:10:06,479 - INFO - estimate of 18 happpens 0.46079% of the time"
+                    ],
+                    [
+                        "1715602206462756352",
+                        "2024-05-13 14:10:06,462 - INFO - estimate of 17 happpens 1.38573% of the time"
+                    ],
+                    [
+                        "1715602206430141184",
+                        "2024-05-13 14:10:06,430 - INFO - estimate of 16 happpens 2.76566% of the time"
+                    ],
+                    [
+                        "1715602206414519040",
+                        "2024-05-13 14:10:06,414 - INFO - estimate of 15 happpens 4.62568% of the time"
+                    ],
+                    [
+                        "1715602206386724096",
+                        "2024-05-13 14:10:06,386 - INFO - estimate of 14 happpens 6.94408% of the time"
+                    ],
+                    [
+                        "1715602206351424512",
+                        "2024-05-13 14:10:06,351 - INFO - estimate of 13 happpens 9.7076% of the time"
+                    ],
+                    [
+                        "1715602206335802368",
+                        "2024-05-13 14:10:06,335 - INFO - estimate of 12 happpens 11.57576% of the time"
+                    ],
+                    [
+                        "1715602206304495616",
+                        "2024-05-13 14:10:06,304 - INFO - estimate of 11 happpens 12.51081% of the time"
+                    ],
+                    [
+                        "1715602206288441600",
+                        "2024-05-13 14:10:06,257 - INFO - estimate of 10 happpens 12.51775% of the time"
+                    ],
+                    [
+                        "1715602206241732608",
+                        "2024-05-13 14:10:06,241 - INFO - estimate of 9 happpens 11.53094% of the time"
+                    ],
+                    [
+                        "1715602206217373184",
+                        "2024-05-13 14:10:06,217 - INFO - estimate of 8 happpens 9.73496% of the time"
+                    ],
+                    [
+                        "1715602206192936192",
+                        "2024-05-13 14:10:06,192 - INFO - estimate of 7 happpens 6.97063% of the time"
+                    ],
+                    [
+                        "1715602206169107456",
+                        "2024-05-13 14:10:06,168 - INFO - estimate of 6 happpens 4.61701% of the time"
+                    ],
+                    [
+                        "1715602206137335296",
+                        "2024-05-13 14:10:06,137 - INFO - estimate of 5 happpens 2.79229% of the time"
+                    ],
+                    [
+                        "1715602206106007552",
+                        "2024-05-13 14:10:06,106 - INFO - estimate of 4 happpens 1.39667% of the time"
+                    ],
+                    [
+                        "1715602206089850368",
+                        "2024-05-13 14:10:06,089 - INFO - estimate of 3 happpens 0.46363% of the time"
+                    ],
+                    [
+                        "1715602206058095872",
+                        "2024-05-13 14:10:06,058 - INFO - Final funds: -312260600"
+                    ],
+                    [
+                        "1715602206042397184",
+                        "2024-05-13 14:10:06,018 - INFO - Number of losses: 3476553"
+                    ],
+                    [
+                        "1715602205987847424",
+                        "2024-05-13 14:10:05,987 - INFO - Number of wins: 353847"
+                    ],
+                    [
+                        "1715602198814861312",
+                        "2024-05-13 14:09:58,814 - INFO - Initial funds: 10000"
+                    ],
+                    [
+                        "1715602198799186944",
+                        "2024-05-13 14:09:58,799 - INFO - Wager: 100"
+                    ],
+                    [
+                        "1715602198777355776",
+                        "2024-05-13 14:09:58,748 - INFO - Wager count: 3830400"
+                    ],
+                    [
+                        "1715602198158926848",
+                        "2024-05-13 14:09:58,158 - INFO - Starting Workload"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "29.6",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
+                    "Available_RAM": "1.46",
+                    "CPU": "9.0",
+                    "RAM": "82.7",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker3",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248541269682944",
-                        "2024-05-09 09:55:41,269 - INFO - CPU: 29.6% RAM: 33.9% Available RAM: 2.63 GB"
+                        "1715602206518846976",
+                        "2024-05-13 14:10:06,499 - INFO - CPU: 9.0% RAM: 82.7% Available RAM: 1.46 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "18.3",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
+                    "Available_RAM": "1.46",
+                    "CPU": "19.5",
+                    "RAM": "82.6",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker3",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248539562960896",
-                        "2024-05-09 09:55:39,562 - INFO - CPU: 18.3% RAM: 33.9% Available RAM: 2.63 GB"
+                        "1715602206018599168",
+                        "2024-05-13 14:10:05,996 - INFO - CPU: 19.5% RAM: 82.6% Available RAM: 1.46 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "17.9",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248538607739136",
-                        "2024-05-09 09:55:38,607 - INFO - CPU: 17.9% RAM: 33.8% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
+                    "Available_RAM": "1.46",
                     "CPU": "17.2",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
+                    "RAM": "82.6",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker3",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248538368346624",
-                        "2024-05-09 09:55:38,367 - INFO - CPU: 17.2% RAM: 33.8% Available RAM: 2.63 GB"
+                        "1715602206257181952",
+                        "2024-05-13 14:10:06,249 - INFO - CPU: 17.2% RAM: 82.6% Available RAM: 1.46 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "14.6",
-                    "RAM": "33.8",
-                    "affinity": "worker3",
+                    "Available_RAM": "1.46",
+                    "CPU": "16.7",
+                    "RAM": "82.6",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker3",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248539324006400",
-                        "2024-05-09 09:55:39,323 - INFO - CPU: 14.6% RAM: 33.8% Available RAM: 2.63 GB"
+                        "1715602205684522496",
+                        "2024-05-13 14:10:05,684 - INFO - CPU: 16.7% RAM: 82.6% Available RAM: 1.46 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "14.3",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248541504258816",
-                        "2024-05-09 09:55:41,503 - INFO - CPU: 14.3% RAM: 33.9% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "2.63",
-                    "CPU": "12.2",
-                    "RAM": "33.9",
-                    "affinity": "worker3",
-                    "application": "Workload",
-                    "host": "worker3",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "bf726d26-3f6d-4063-9bd2-cddc66a3fc43",
-                    "workload": "Whisper"
-                },
-                "values": [
-                    [
-                        "1715248540040842752",
-                        "2024-05-09 09:55:40,040 - INFO - CPU: 12.2% RAM: 33.9% Available RAM: 2.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.65",
-                    "CPU": "57.0",
-                    "RAM": "58.5",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248536520558848",
-                        "2024-05-09 09:55:36,520 - INFO - CPU: 57.0% RAM: 58.5% Available RAM: 1.65 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.65",
-                    "CPU": "31.9",
-                    "RAM": "58.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248536851815424",
-                        "2024-05-09 09:55:36,851 - INFO - CPU: 31.9% RAM: 58.6% Available RAM: 1.65 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "57.7",
-                    "RAM": "58.7",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248537779663104",
-                        "2024-05-09 09:55:37,779 - INFO - CPU: 57.7% RAM: 58.7% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "41.7",
-                    "RAM": "58.7",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248537493881088",
-                        "2024-05-09 09:55:37,493 - INFO - CPU: 41.7% RAM: 58.7% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "40.4",
-                    "RAM": "58.7",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248538108350976",
-                        "2024-05-09 09:55:38,108 - INFO - CPU: 40.4% RAM: 58.7% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "32.4",
-                    "RAM": "58.8",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248540851458048",
-                        "2024-05-09 09:55:40,851 - INFO - CPU: 32.4% RAM: 58.8% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "30.3",
-                    "RAM": "58.8",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248538438612736",
-                        "2024-05-09 09:55:38,438 - INFO - CPU: 30.3% RAM: 58.8% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "30.3",
-                    "RAM": "58.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248537183885568",
-                        "2024-05-09 09:55:37,183 - INFO - CPU: 30.3% RAM: 58.6% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.64",
-                    "CPU": "26.4",
-                    "RAM": "58.9",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248541177167360",
-                        "2024-05-09 09:55:41,176 - INFO - CPU: 26.4% RAM: 58.9% Available RAM: 1.64 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.63",
-                    "CPU": "47.2",
-                    "RAM": "59.0",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248542151685376",
-                        "2024-05-09 09:55:42,151 - INFO - CPU: 47.2% RAM: 59.0% Available RAM: 1.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.63",
-                    "CPU": "35.7",
-                    "RAM": "59.1",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248542482073088",
-                        "2024-05-09 09:55:42,481 - INFO - CPU: 35.7% RAM: 59.1% Available RAM: 1.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.63",
-                    "CPU": "29.5",
-                    "RAM": "58.9",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248541506778112",
-                        "2024-05-09 09:55:41,506 - INFO - CPU: 29.5% RAM: 58.9% Available RAM: 1.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.63",
-                    "CPU": "27.1",
-                    "RAM": "59.0",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248541837620224",
-                        "2024-05-09 09:55:41,837 - INFO - CPU: 27.1% RAM: 59.0% Available RAM: 1.63 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.62",
-                    "CPU": "40.5",
-                    "RAM": "59.3",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248544114253312",
-                        "2024-05-09 09:55:44,113 - INFO - CPU: 40.5% RAM: 59.3% Available RAM: 1.62 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.62",
-                    "CPU": "29.7",
-                    "RAM": "59.4",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248544453226752",
-                        "2024-05-09 09:55:44,452 - INFO - CPU: 29.7% RAM: 59.4% Available RAM: 1.62 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.62",
-                    "CPU": "28.1",
-                    "RAM": "59.3",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248543457934592",
-                        "2024-05-09 09:55:43,457 - INFO - CPU: 28.1% RAM: 59.3% Available RAM: 1.62 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.62",
-                    "CPU": "26.9",
-                    "RAM": "59.2",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248543152208640",
-                        "2024-05-09 09:55:43,151 - INFO - CPU: 26.9% RAM: 59.2% Available RAM: 1.62 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.62",
-                    "CPU": "26.2",
-                    "RAM": "59.2",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248542822120448",
-                        "2024-05-09 09:55:42,821 - INFO - CPU: 26.2% RAM: 59.2% Available RAM: 1.62 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.61",
-                    "CPU": "31.0",
-                    "RAM": "59.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248546114696192",
-                        "2024-05-09 09:55:46,114 - INFO - CPU: 31.0% RAM: 59.6% Available RAM: 1.61 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.61",
-                    "CPU": "28.9",
-                    "RAM": "59.5",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248545452822784",
-                        "2024-05-09 09:55:45,452 - INFO - CPU: 28.9% RAM: 59.5% Available RAM: 1.61 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.61",
-                    "CPU": "27.4",
-                    "RAM": "59.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248545788599040",
-                        "2024-05-09 09:55:45,788 - INFO - CPU: 27.4% RAM: 59.6% Available RAM: 1.61 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.61",
-                    "CPU": "27.3",
-                    "RAM": "59.4",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248544778470144",
-                        "2024-05-09 09:55:44,778 - INFO - CPU: 27.3% RAM: 59.4% Available RAM: 1.61 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.61",
-                    "CPU": "26.0",
-                    "RAM": "59.5",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248545107961856",
-                        "2024-05-09 09:55:45,107 - INFO - CPU: 26.0% RAM: 59.5% Available RAM: 1.61 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.6",
-                    "CPU": "58.5",
-                    "RAM": "59.7",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248546416031488",
-                        "2024-05-09 09:55:46,415 - INFO - CPU: 58.5% RAM: 59.7% Available RAM: 1.6 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.6",
-                    "CPU": "50.8",
-                    "RAM": "59.4",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248543795028736",
-                        "2024-05-09 09:55:43,794 - INFO - CPU: 50.8% RAM: 59.4% Available RAM: 1.6 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.6",
-                    "CPU": "36.8",
-                    "RAM": "59.8",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248547390141952",
-                        "2024-05-09 09:55:47,389 - INFO - CPU: 36.8% RAM: 59.8% Available RAM: 1.6 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.6",
-                    "CPU": "33.6",
-                    "RAM": "59.9",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248547722615552",
-                        "2024-05-09 09:55:47,722 - INFO - CPU: 33.6% RAM: 59.9% Available RAM: 1.6 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.6",
-                    "CPU": "33.3",
-                    "RAM": "59.7",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248546752639744",
-                        "2024-05-09 09:55:46,752 - INFO - CPU: 33.3% RAM: 59.7% Available RAM: 1.6 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.6",
-                    "CPU": "27.9",
-                    "RAM": "59.7",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248547058477056",
-                        "2024-05-09 09:55:47,057 - INFO - CPU: 27.9% RAM: 59.7% Available RAM: 1.6 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.59",
-                    "CPU": "30.6",
-                    "RAM": "59.9",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248548066233088",
-                        "2024-05-09 09:55:48,065 - INFO - CPU: 30.6% RAM: 59.9% Available RAM: 1.59 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.59",
-                    "CPU": "30.2",
-                    "RAM": "60.1",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248549368912896",
-                        "2024-05-09 09:55:49,368 - INFO - CPU: 30.2% RAM: 60.1% Available RAM: 1.59 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.59",
-                    "CPU": "28.6",
-                    "RAM": "59.9",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248548401104640",
-                        "2024-05-09 09:55:48,400 - INFO - CPU: 28.6% RAM: 59.9% Available RAM: 1.59 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.59",
-                    "CPU": "27.1",
-                    "RAM": "60.1",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248549703544832",
-                        "2024-05-09 09:55:49,703 - INFO - CPU: 27.1% RAM: 60.1% Available RAM: 1.59 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.59",
-                    "CPU": "26.2",
-                    "RAM": "60.0",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248549049919232",
-                        "2024-05-09 09:55:49,049 - INFO - CPU: 26.2% RAM: 60.0% Available RAM: 1.59 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.59",
-                    "CPU": "26.1",
-                    "RAM": "60.0",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248548735670784",
-                        "2024-05-09 09:55:48,735 - INFO - CPU: 26.1% RAM: 60.0% Available RAM: 1.59 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.58",
-                    "CPU": "34.4",
-                    "RAM": "60.2",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248550032519936",
-                        "2024-05-09 09:55:50,032 - INFO - CPU: 34.4% RAM: 60.2% Available RAM: 1.58 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.58",
-                    "CPU": "28.0",
-                    "RAM": "60.2",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248550357636608",
-                        "2024-05-09 09:55:50,357 - INFO - CPU: 28.0% RAM: 60.2% Available RAM: 1.58 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.58",
-                    "CPU": "27.3",
-                    "RAM": "60.2",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248550687092736",
-                        "2024-05-09 09:55:50,686 - INFO - CPU: 27.3% RAM: 60.2% Available RAM: 1.58 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.58",
-                    "CPU": "27.2",
-                    "RAM": "60.3",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248551001458688",
-                        "2024-05-09 09:55:51,001 - INFO - CPU: 27.2% RAM: 60.3% Available RAM: 1.58 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.58",
-                    "CPU": "26.0",
-                    "RAM": "60.3",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248551331310080",
-                        "2024-05-09 09:55:51,331 - INFO - CPU: 26.0% RAM: 60.3% Available RAM: 1.58 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "62.3",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248553966938624",
-                        "2024-05-09 09:55:53,966 - INFO - CPU: 62.3% RAM: 60.6% Available RAM: 1.57 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "57.0",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248556538107648",
-                        "2024-05-09 09:55:56,537 - INFO - CPU: 57.0% RAM: 60.6% Available RAM: 1.57 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "45.2",
-                    "RAM": "60.5",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248552327524352",
-                        "2024-05-09 09:55:52,327 - INFO - CPU: 45.2% RAM: 60.5% Available RAM: 1.57 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "41.0",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
-                    "application": "Workload",
-                    "host": "worker2",
-                    "logger": "root",
-                    "service_name": "Workload",
-                    "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
-                },
-                "values": [
-                    [
-                        "1715248557790844160",
-                        "2024-05-09 09:55:57,790 - INFO - CPU: 41.0% RAM: 60.6% Available RAM: 1.57 GB"
-                    ]
-                ]
-            },
-            {
-                "stream": {
-                    "Available_RAM": "1.57",
+                    "Available_RAM": "1.44",
                     "CPU": "35.4",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "RAM": "82.9",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248552658174464",
-                        "2024-05-09 09:55:52,657 - INFO - CPU: 35.4% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602204022378496",
+                        "2024-05-13 14:10:04,022 - INFO - CPU: 35.4% RAM: 82.9% Available RAM: 1.44 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "31.8",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.44",
+                    "CPU": "34.7",
+                    "RAM": "82.9",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248557450802176",
-                        "2024-05-09 09:55:57,450 - INFO - CPU: 31.8% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602204402910464",
+                        "2024-05-13 14:10:04,402 - INFO - CPU: 34.7% RAM: 82.9% Available RAM: 1.44 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "31.8",
-                    "RAM": "60.4",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.44",
+                    "CPU": "17.6",
+                    "RAM": "82.9",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248552001794560",
-                        "2024-05-09 09:55:52,001 - INFO - CPU: 31.8% RAM: 60.4% Available RAM: 1.57 GB"
+                        "1715602204737388032",
+                        "2024-05-13 14:10:04,737 - INFO - CPU: 17.6% RAM: 82.9% Available RAM: 1.44 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "31.3",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.44",
+                    "CPU": "14.5",
+                    "RAM": "82.9",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248555860500480",
-                        "2024-05-09 09:55:55,860 - INFO - CPU: 31.3% RAM: 60.6% Available RAM: 1.57 GB"
-                    ],
-                    [
-                        "1715248555239230464",
-                        "2024-05-09 09:55:55,238 - INFO - CPU: 31.3% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602205363942656",
+                        "2024-05-13 14:10:05,363 - INFO - CPU: 14.5% RAM: 82.9% Available RAM: 1.44 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "30.7",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.43",
+                    "CPU": "14.9",
+                    "RAM": "83.0",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248554250744320",
-                        "2024-05-09 09:55:54,250 - INFO - CPU: 30.7% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602205057902080",
+                        "2024-05-13 14:10:05,057 - INFO - CPU: 14.9% RAM: 83.0% Available RAM: 1.43 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "30.6",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.36",
+                    "CPU": "17.9",
+                    "RAM": "83.9",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248554580088576",
-                        "2024-05-09 09:55:54,579 - INFO - CPU: 30.6% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602203652574976",
+                        "2024-05-13 14:10:03,652 - INFO - CPU: 17.9% RAM: 83.9% Available RAM: 1.36 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "29.5",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.31",
+                    "CPU": "8.8",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248558126200064",
-                        "2024-05-09 09:55:58,125 - INFO - CPU: 29.5% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602203312154624",
+                        "2024-05-13 14:10:03,312 - INFO - CPU: 8.8% RAM: 84.5% Available RAM: 1.31 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "29.3",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.31",
+                    "CPU": "15.6",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248557161971712",
-                        "2024-05-09 09:55:57,161 - INFO - CPU: 29.3% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602199291262464",
+                        "2024-05-13 14:09:59,291 - INFO - CPU: 15.6% RAM: 84.5% Available RAM: 1.31 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "29.2",
-                    "RAM": "60.4",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.31",
+                    "CPU": "15.5",
+                    "RAM": "84.4",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248551675586560",
-                        "2024-05-09 09:55:51,675 - INFO - CPU: 29.2% RAM: 60.4% Available RAM: 1.57 GB"
+                        "1715602201205024000",
+                        "2024-05-13 14:10:01,205 - INFO - CPU: 15.5% RAM: 84.4% Available RAM: 1.31 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "28.2",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.3",
+                    "CPU": "26.1",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248555528696320",
-                        "2024-05-09 09:55:55,528 - INFO - CPU: 28.2% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602202091515392",
+                        "2024-05-13 14:10:02,091 - INFO - CPU: 26.1% RAM: 84.5% Available RAM: 1.3 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "26.7",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.3",
+                    "CPU": "23.0",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248553317612032",
-                        "2024-05-09 09:55:53,317 - INFO - CPU: 26.7% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602199942635008",
+                        "2024-05-13 14:09:59,942 - INFO - CPU: 23.0% RAM: 84.5% Available RAM: 1.3 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
-                    "CPU": "26.0",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.3",
+                    "CPU": "21.9",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248556867341568",
-                        "2024-05-09 09:55:56,867 - INFO - CPU: 26.0% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602202700505856",
+                        "2024-05-13 14:10:02,700 - INFO - CPU: 21.9% RAM: 84.5% Available RAM: 1.3 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.57",
+                    "Available_RAM": "1.3",
+                    "CPU": "20.7",
+                    "RAM": "84.6",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602200890208768",
+                        "2024-05-13 14:10:00,890 - INFO - CPU: 20.7% RAM: 84.6% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "17.7",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602199625907200",
+                        "2024-05-13 14:09:59,625 - INFO - CPU: 17.7% RAM: 84.5% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "17.5",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602203004374272",
+                        "2024-05-13 14:10:03,004 - INFO - CPU: 17.5% RAM: 84.5% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "17.1",
+                    "RAM": "84.6",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602200562711552",
+                        "2024-05-13 14:10:00,562 - INFO - CPU: 17.1% RAM: 84.6% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "16.1",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602201814426368",
+                        "2024-05-13 14:10:01,814 - INFO - CPU: 16.1% RAM: 84.5% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "15.5",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602200282454784",
+                        "2024-05-13 14:10:00,282 - INFO - CPU: 15.5% RAM: 84.5% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "14.3",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602202406260992",
+                        "2024-05-13 14:10:02,406 - INFO - CPU: 14.3% RAM: 84.5% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "12.5",
+                    "RAM": "84.6",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602198991944960",
+                        "2024-05-13 14:09:58,991 - INFO - CPU: 12.5% RAM: 84.6% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.3",
+                    "CPU": "10.7",
+                    "RAM": "84.5",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602201505821696",
+                        "2024-05-13 14:10:01,505 - INFO - CPU: 10.7% RAM: 84.5% Available RAM: 1.3 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.29",
+                    "CPU": "0.0",
+                    "RAM": "84.6",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "021bc91e-dac6-4aa7-a127-ace7c754a9f2",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602198748083968",
+                        "2024-05-13 14:09:58,748 - INFO - CPU: 0.0% RAM: 84.6% Available RAM: 1.29 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.25",
+                    "CPU": "9.6",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602173454690304",
+                        "2024-05-13 14:09:33,454 - INFO - CPU: 9.6% RAM: 85.2% Available RAM: 1.25 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.25",
+                    "CPU": "5.6",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602173227189760",
+                        "2024-05-13 14:09:33,194 - INFO - CPU: 5.6% RAM: 85.2% Available RAM: 1.25 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.25",
+                    "CPU": "18.8",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602171978429184",
+                        "2024-05-13 14:09:31,978 - INFO - CPU: 18.8% RAM: 85.2% Available RAM: 1.25 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.25",
+                    "CPU": "15.9",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602169152886016",
+                        "2024-05-13 14:09:29,152 - INFO - CPU: 15.9% RAM: 85.2% Available RAM: 1.25 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.25",
+                    "CPU": "14.5",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602172883111424",
+                        "2024-05-13 14:09:32,883 - INFO - CPU: 14.5% RAM: 85.2% Available RAM: 1.25 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.25",
+                    "CPU": "13.7",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602172285826304",
+                        "2024-05-13 14:09:32,285 - INFO - CPU: 13.7% RAM: 85.2% Available RAM: 1.25 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.24",
                     "CPU": "25.6",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "RAM": "85.3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248558440161536",
-                        "2024-05-09 09:55:58,439 - INFO - CPU: 25.6% RAM: 60.6% Available RAM: 1.57 GB"
-                    ],
-                    [
-                        "1715248554904397568",
-                        "2024-05-09 09:55:54,904 - INFO - CPU: 25.6% RAM: 60.6% Available RAM: 1.57 GB"
+                        "1715602169468318720",
+                        "2024-05-13 14:09:29,468 - INFO - CPU: 25.6% RAM: 85.3% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "34.4",
-                    "RAM": "60.7",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "18.9",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248553650212096",
-                        "2024-05-09 09:55:53,649 - INFO - CPU: 34.4% RAM: 60.7% Available RAM: 1.56 GB"
+                        "1715602171668817152",
+                        "2024-05-13 14:09:31,668 - INFO - CPU: 18.9% RAM: 85.2% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "33.3",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "15.9",
+                    "RAM": "85.3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248561872557824",
-                        "2024-05-09 09:56:00,632 - INFO - CPU: 33.3% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602172577287936",
+                        "2024-05-13 14:09:32,577 - INFO - CPU: 15.9% RAM: 85.3% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "29.4",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "15.7",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248558751345152",
-                        "2024-05-09 09:55:58,751 - INFO - CPU: 29.4% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602168842387712",
+                        "2024-05-13 14:09:28,842 - INFO - CPU: 15.7% RAM: 85.2% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "28.9",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "15.3",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248560039389952",
-                        "2024-05-09 09:56:00,039 - INFO - CPU: 28.9% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602170139650816",
+                        "2024-05-13 14:09:30,139 - INFO - CPU: 15.3% RAM: 85.2% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "28.8",
-                    "RAM": "60.7",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "14.8",
+                    "RAM": "85.3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248556196584192",
-                        "2024-05-09 09:55:56,196 - INFO - CPU: 28.8% RAM: 60.7% Available RAM: 1.56 GB"
+                        "1715602171352536064",
+                        "2024-05-13 14:09:31,352 - INFO - CPU: 14.8% RAM: 85.3% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "28.6",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "13.6",
+                    "RAM": "85.3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248559709873920",
-                        "2024-05-09 09:55:59,709 - INFO - CPU: 28.6% RAM: 60.6% Available RAM: 1.56 GB"
-                    ],
-                    [
-                        "1715248552987968256",
-                        "2024-05-09 09:55:52,987 - INFO - CPU: 28.6% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602169809771776",
+                        "2024-05-13 14:09:29,809 - INFO - CPU: 13.6% RAM: 85.3% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "26.7",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "12.5",
+                    "RAM": "85.3",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248559050823936",
-                        "2024-05-09 09:55:59,050 - INFO - CPU: 26.7% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602168547126016",
+                        "2024-05-13 14:09:28,547 - INFO - CPU: 12.5% RAM: 85.3% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "26.0",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "11.3",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248560368603136",
-                        "2024-05-09 09:56:00,368 - INFO - CPU: 26.0% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602171044028160",
+                        "2024-05-13 14:09:31,044 - INFO - CPU: 11.3% RAM: 85.2% Available RAM: 1.24 GB"
                     ]
                 ]
             },
             {
                 "stream": {
-                    "Available_RAM": "1.56",
-                    "CPU": "25.8",
-                    "RAM": "60.6",
-                    "affinity": "worker1",
+                    "Available_RAM": "1.24",
+                    "CPU": "10.6",
+                    "RAM": "85.2",
+                    "affinity": "worker2",
                     "application": "Workload",
-                    "host": "worker2",
+                    "host": "Unknown",
                     "logger": "root",
                     "service_name": "Workload",
                     "severity": "info",
-                    "uuid": "b8e81d16-3ba9-4f12-93f8-39d807ca54ad",
-                    "workload": "TSP"
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
                 },
                 "values": [
                     [
-                        "1715248559375077120",
-                        "2024-05-09 09:55:59,374 - INFO - CPU: 25.8% RAM: 60.6% Available RAM: 1.56 GB"
+                        "1715602170758861568",
+                        "2024-05-13 14:09:30,758 - INFO - CPU: 10.6% RAM: 85.2% Available RAM: 1.24 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "9.9",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602165442372352",
+                        "2024-05-13 14:09:25,442 - INFO - CPU: 9.9% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "23.5",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602167303947776",
+                        "2024-05-13 14:09:27,303 - INFO - CPU: 23.5% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "17.0",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602166685076480",
+                        "2024-05-13 14:09:26,685 - INFO - CPU: 17.0% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "15.2",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602167621515008",
+                        "2024-05-13 14:09:27,621 - INFO - CPU: 15.2% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "14.5",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602168241973504",
+                        "2024-05-13 14:09:28,241 - INFO - CPU: 14.5% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "14.2",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602166376090112",
+                        "2024-05-13 14:09:26,376 - INFO - CPU: 14.2% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "13.2",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602165760118016",
+                        "2024-05-13 14:09:25,760 - INFO - CPU: 13.2% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "13.1",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602167000969728",
+                        "2024-05-13 14:09:27,000 - INFO - CPU: 13.1% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "11.2",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602167921413120",
+                        "2024-05-13 14:09:27,921 - INFO - CPU: 11.2% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.23",
+                    "CPU": "0.0",
+                    "RAM": "85.4",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602165192857856",
+                        "2024-05-13 14:09:25,161 - INFO - CPU: 0.0% RAM: 85.4% Available RAM: 1.23 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.22",
+                    "CPU": "15.9",
+                    "RAM": "85.6",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602166049975552",
+                        "2024-05-13 14:09:26,049 - INFO - CPU: 15.9% RAM: 85.6% Available RAM: 1.22 GB"
+                    ]
+                ]
+            },
+            {
+                "stream": {
+                    "Available_RAM": "1.21",
+                    "CPU": "12.5",
+                    "RAM": "85.6",
+                    "affinity": "worker2",
+                    "application": "Workload",
+                    "host": "Unknown",
+                    "logger": "root",
+                    "service_name": "Workload",
+                    "severity": "info",
+                    "uuid": "c96f46b5-3e6f-40b3-a0fc-eb52b32efac6",
+                    "workload": "Monte Carlo"
+                },
+                "values": [
+                    [
+                        "1715602170453244672",
+                        "2024-05-13 14:09:30,452 - INFO - CPU: 12.5% RAM: 85.6% Available RAM: 1.21 GB"
                     ]
                 ]
             }
         ],
         "stats": {
             "summary": {
-                "bytesProcessedPerSecond": 16533034,
-                "linesProcessedPerSecond": 211983,
-                "totalBytesProcessed": 828043,
-                "totalLinesProcessed": 10617,
-                "execTime": 0.050084,
-                "queueTime": 0.00043,
+                "bytesProcessedPerSecond": 1927105,
+                "linesProcessedPerSecond": 18399,
+                "totalBytesProcessed": 22518,
+                "totalLinesProcessed": 215,
+                "execTime": 0.011685,
+                "queueTime": 0.000218,
                 "subqueries": 0,
                 "totalEntriesReturned": 100,
-                "splits": 2,
-                "shards": 0,
-                "totalPostFilterLines": 10617,
-                "totalStructuredMetadataBytesProcessed": 690
+                "splits": 24,
+                "shards": 1,
+                "totalPostFilterLines": 215,
+                "totalStructuredMetadataBytesProcessed": 2150
             },
             "querier": {
                 "store": {
-                    "totalChunksRef": 180,
+                    "totalChunksRef": 137,
                     "totalChunksDownloaded": 100,
-                    "chunksDownloadTime": 2461865,
+                    "chunksDownloadTime": 3440166,
                     "queryReferencedStructuredMetadata": false,
                     "chunk": {
                         "headChunkBytes": 0,
                         "headChunkLines": 0,
-                        "decompressedBytes": 7023,
-                        "decompressedLines": 69,
-                        "compressedBytes": 5931,
-                        "totalDuplicates": 100,
-                        "postFilterLines": 69,
+                        "decompressedBytes": 22518,
+                        "decompressedLines": 215,
+                        "compressedBytes": 14610,
+                        "totalDuplicates": 0,
+                        "postFilterLines": 215,
                         "headChunkStructuredMetadataBytes": 0,
-                        "decompressedStructuredMetadataBytes": 690
+                        "decompressedStructuredMetadataBytes": 2150
                     },
-                    "chunkRefsFetchTime": 2195950,
+                    "chunkRefsFetchTime": 2409784,
                     "congestionControlLatency": 0,
                     "pipelineWrapperFilteredLines": 0
                 }
             },
             "ingester": {
-                "totalReached": 6,
-                "totalChunksMatched": 9586,
-                "totalBatches": 4,
-                "totalLinesSent": 200,
+                "totalReached": 3,
+                "totalChunksMatched": 0,
+                "totalBatches": 2,
+                "totalLinesSent": 0,
                 "store": {
                     "totalChunksRef": 0,
                     "totalChunksDownloaded": 0,
                     "chunksDownloadTime": 0,
                     "queryReferencedStructuredMetadata": false,
                     "chunk": {
-                        "headChunkBytes": 821020,
-                        "headChunkLines": 10548,
+                        "headChunkBytes": 0,
+                        "headChunkLines": 0,
                         "decompressedBytes": 0,
                         "decompressedLines": 0,
                         "compressedBytes": 0,
                         "totalDuplicates": 0,
-                        "postFilterLines": 10548,
+                        "postFilterLines": 0,
                         "headChunkStructuredMetadataBytes": 0,
                         "decompressedStructuredMetadataBytes": 0
                     },
@@ -1976,10 +1418,10 @@
                     "entriesFound": 100,
                     "entriesRequested": 100,
                     "entriesStored": 0,
-                    "bytesReceived": 60409,
+                    "bytesReceived": 63130,
                     "bytesSent": 0,
-                    "requests": 4,
-                    "downloadTime": 1595395,
+                    "requests": 5,
+                    "downloadTime": 2509820,
                     "queryLengthServed": 0
                 },
                 "index": {
@@ -1993,13 +1435,13 @@
                     "queryLengthServed": 0
                 },
                 "result": {
-                    "entriesFound": 33,
-                    "entriesRequested": 36,
+                    "entriesFound": 79,
+                    "entriesRequested": 84,
                     "entriesStored": 0,
-                    "bytesReceived": 4791,
+                    "bytesReceived": 11540,
                     "bytesSent": 0,
-                    "requests": 36,
-                    "downloadTime": 29780360,
+                    "requests": 84,
+                    "downloadTime": 122329337,
                     "queryLengthServed": 0
                 },
                 "statsResult": {

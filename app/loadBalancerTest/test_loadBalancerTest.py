@@ -5,7 +5,7 @@ import pytest
 import json
 
 def test_load_balancing():
-    days = "3d"
+    days = "7d"
     get_logs(days)
     try:
         with open('test.json', 'r') as file:
