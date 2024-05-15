@@ -171,7 +171,7 @@ def genetic_algorithm(cities):
 
     return best_route, best_distance
 
-if __name__ == "__main__":
+def startWorkload():
     setup_logger()
     logger = logger.PerformanceLogger()
     logger.start()
@@ -179,3 +179,6 @@ if __name__ == "__main__":
     logging.info(f"Best Route: {best_route}")
     logging.info(f"Best Distance: {best_distance}")
     logger.stop()
+
+if __name__ == "__main__":
+    startWorkload()
