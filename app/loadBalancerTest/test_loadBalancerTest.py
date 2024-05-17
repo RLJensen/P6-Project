@@ -12,10 +12,13 @@ def test_load_balancing():
             json_data = json.load(file)
 
         stream_objects = [stream['stream'] for stream in json_data['data']['result']]
+        #stream_CPU = [stream['stream'] for stream in json_data['data']['result']]
+        #stream_CPU = [stream['stream'] for stream in json_data]
         load_balancing_count = sum(1 for stream_obj in stream_objects if stream_obj['host'] != stream_obj['affinity'])
+        #load_balancing_accuracy = sum(1 for stream_obj in stream_CPU if stream_obj['cpu'] > 60.0)
 
-        print(f"Load balancing occurred {load_balancing_count} times out if {len(stream_objects)} instances. Over the past {days}.")
-
+        print(f"Load balancing occurred {load_balancing_count} times out of {len(stream_objects)} instances. Over the past {days}.")
+        #print(f"Load balancing occurred correctly {load_balancing_accuracy} times out of {len(stream_objects)} instances. Over the past {days}")
 
         # Perform assertions
         assert load_balancing_count > 0, "No load balancing occurrences detected!"
@@ -31,7 +34,7 @@ def get_logs(days):
     load_dotenv()
     params = {
         "query": query,
-        "limit": 100,
+        "limit": 1000,
         "direction": "backward",
         "since": days
     }
@@ -43,11 +46,20 @@ def get_logs(days):
     response = requests.get(loki_url, params=params,auth=auth)
 
     if response.status_code == 200:
-        data = response.json()
-        with open('test.json', 'w') as f:
-            json.dump(data, f, indent=4)
+        try:
+            data = response.json()
+            with open('test.json', 'w') as f:
+                f.flush()  # Ensure all data is written to the file
+                json.dump(data,f,indent=4)
+            print("Data successfully written to test.json")
+        except ValueError:
+            print("Error: Response is not in JSON format")
+        except IOError as e:
+            print(f"IOError: {e}")
         
         print("data has been written successfully!")
     else:
         print("Error:", response.status_code,";", response.content,";", response.reason)
     
+if __name__ == '__main__':
+    test_load_balancing()
