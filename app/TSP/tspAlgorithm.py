@@ -159,13 +159,14 @@ def genetic_algorithm(cities):
                 if distance < best_distance:
                     best_distance = distance
                     best_route = route
+            
+            logging.info(f"Best distance in generation {gen + 1}: {best_distance}")
+
+            # Evolve the population
+            population = evolve_population(population)
     except Exception as e:
         logging.error(f"Error: {e}")
 
-    logging.info(f"Best distance in generation {gen + 1}: {best_distance}")
-
-    # Evolve the population
-    population = evolve_population(population)
 
     logging.info("Genetic algorithm finished.")
 

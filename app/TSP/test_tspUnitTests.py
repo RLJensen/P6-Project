@@ -1,6 +1,7 @@
 import unittest
 import tspAlgorithm
 
+
 class TestTSP(unittest.TestCase):
 
     cities = tspAlgorithm.read_city_coordinates('cities.txt', 5)
