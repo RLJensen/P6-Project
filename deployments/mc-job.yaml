@@ -1,0 +1,46 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: mc-job-
+spec:
+  ttlSecondsAfterFinished: 60
+  template:
+    spec:
+      containers:
+      - name: mcapp
+        image: docker.io/rajensen/tspapp:arm
+        command: ["python", "monteCarloAlgo.py"]
+        env:
+        - name: hostname
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        resources :
+          limits:
+            cpu: "1"
+      restartPolicy: Never
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 10
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values:
+                - mc
+          - weight: 5
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values:
+                - tsp
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values:
+                - whisper
+  backoffLimit: 1
