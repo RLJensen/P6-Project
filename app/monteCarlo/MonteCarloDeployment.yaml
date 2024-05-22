@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: montecarlo
-spec:
-  containers:
-  - name: montecarloapp
-    image: docker.io/casperbchristensen/mcapp:latest
-    command: ["python","monteCarloAlgo.py"]

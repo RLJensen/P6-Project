@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: whisper
-spec:
-  containers:
-  - name: whisperapp
-    image: docker.io/casperbchristensen/whisperapp:latest
-    command: ["python","whisperWorkload.py"]

@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: tsp
-spec:
-  containers:
-  - name: tspapp
-    image: docker.io/casperbchristensen/tspapp:latest
-    command: ["python","tspAlgorithm.py"]

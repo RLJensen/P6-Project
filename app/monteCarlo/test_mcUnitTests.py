@@ -11,7 +11,7 @@ class TestMonteCarlo(unittest.TestCase):
 
         funds = 100
         initial_wager = 10
-        wager_count = 5
+        wager_count = 100
 
         final_value, num_wins = monteCarloAlgo.estimateDice(funds, initial_wager, wager_count)
 

@@ -73,6 +73,8 @@ def estimateDice(funds,initial_wager,count):
     for i, value in enumerate(rollLog):
         if i > 2:
             logging.info(f"estimate of {i} happpens {round(value / count * 100, 5)}% of the time")
+
+    return value, num_wins
         
 def rollDice():
     return random.randint(1,6)
