@@ -16,21 +16,22 @@ def setup_logger():
     if custom_logger.hasHandlers():
         custom_logger.handlers.clear()
 
-    try:
-        handler = logging_loki.LokiHandler(
-            url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
-            tags={"application": "Workload",
-                  "host": hostname,
-                  "workload": workload_type,
-                  "affinity":"worker2",
-                  "uuid": uuid},
-            auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
-            version="1",
-        )
-    except Exception as e:
-        print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
-        raise
+    # try:
+    #     handler = logging_loki.LokiHandler(
+    #         url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
+    #         tags={"application": "Workload",
+    #               "host": hostname,
+    #               "workload": workload_type,
+    #               "affinity":"worker2",
+    #               "uuid": uuid},
+    #         auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
+    #         version="1",
+    #     )
+    # except Exception as e:
+    #     print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
+    #     raise
     
+    handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
@@ -44,6 +45,7 @@ hostname = os.getenv('hostname', 'unknown')
 def startWorkload():
     count = random.randint(1000000,5000000)
     estimateDice(10000, 100, count)
+    return count
 
 def estimateDice(funds,initial_wager,count):
     value = funds
@@ -55,14 +57,7 @@ def estimateDice(funds,initial_wager,count):
     try:
         rollLog = [0] * 19
 
-        for r in range(count):
-            rollresult = roll3Dice()
-            rollLog[rollresult] += 1
-            if rollresult >= 15:
-                num_wins += 1
-                value += wager
-            else:
-                value -= wager
+        value, num_wins, rollLog = doRolls(rollLog, count, num_wins, value, wager)
             
     except Exception as e:
         logging.error(f"Error: {e}")
@@ -70,12 +65,35 @@ def estimateDice(funds,initial_wager,count):
     logging.info(f"Number of wins: {num_wins}")
     logging.info(f"Number of losses: {count - num_wins}")
     logging.info(f"Final funds: {value}")
-    for i, value in enumerate(rollLog):
-        if i > 2:
-            logging.info(f"estimate of {i} happpens {round(value / count * 100, 5)}% of the time")
+    try:
+        for i, result in enumerate(rollLog):
+            if i > 2:
+                logging.info(f"estimate of {i} happens {rollLog[i]}% of the time")
+    except Exception as e:
+        logging.error(f"Error: {e}")
 
-    return value, num_wins
+    return value, num_wins, rollLog
         
+def doRolls(rollLog, count, num_wins, value, wager):
+    for r in range(count):
+        rollresult = roll3Dice()
+        rollLog[rollresult] += 1
+        if rollresult >= 15:
+            num_wins += 1
+            value += wager
+        else:
+            value -= wager
+    return value, num_wins, rollLog
+
+def convertToPercentage(rollLog, count):
+        try:
+            for i, result in enumerate(rollLog):
+                if i > 2:
+                    rollLog[i] = round(result / count * 100, 5)
+            return rollLog
+        except Exception as e:
+            logging.error(f"Error: {e}")
+
 def rollDice():
     return random.randint(1,6)
 
