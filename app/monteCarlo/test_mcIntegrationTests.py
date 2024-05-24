@@ -37,7 +37,7 @@ class TestEstimateDiceIntegration(unittest.TestCase):
     def test_estimateDice_expected_return(self, mock_logging_error, mock_logging_info, mock_roll3Dice):
         # Mock roll3Dice to control its output
         mock_roll3Dice.side_effect = [16, 14, 13, 15, 18, 12, 11, 10, 15, 6]
-        expected_return = [9800,4,[0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,2,1,0,1]]
+        expected_return = (9800, 4, [0, 0, 0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 10.0, 10.0, 10.0, 10.0, 10.0, 20.0, 10.0, 0.0, 10.0])
         funds = 10000
         initial_wager = 100
         count = 10
