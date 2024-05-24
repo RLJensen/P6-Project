@@ -33,7 +33,6 @@ def setup_logger():
         print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
         raise
     
-    handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
