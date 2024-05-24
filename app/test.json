@@ -17691,12 +17691,12 @@
         ],
         "stats": {
             "summary": {
-                "bytesProcessedPerSecond": 1596792,
-                "linesProcessedPerSecond": 14639,
+                "bytesProcessedPerSecond": 1631367,
+                "linesProcessedPerSecond": 14956,
                 "totalBytesProcessed": 183904,
                 "totalLinesProcessed": 1686,
-                "execTime": 0.115171,
-                "queueTime": 0.000584,
+                "execTime": 0.11273,
+                "queueTime": 0.00379,
                 "subqueries": 0,
                 "totalEntriesReturned": 1000,
                 "splits": 24,
@@ -17708,7 +17708,7 @@
                 "store": {
                     "totalChunksRef": 5494,
                     "totalChunksDownloaded": 1445,
-                    "chunksDownloadTime": 52267882,
+                    "chunksDownloadTime": 37534505,
                     "queryReferencedStructuredMetadata": false,
                     "chunk": {
                         "headChunkBytes": 0,
@@ -17721,7 +17721,7 @@
                         "headChunkStructuredMetadataBytes": 0,
                         "decompressedStructuredMetadataBytes": 16860
                     },
-                    "chunkRefsFetchTime": 41203097,
+                    "chunkRefsFetchTime": 42042267,
                     "congestionControlLatency": 0,
                     "pipelineWrapperFilteredLines": 0
                 }
@@ -17760,7 +17760,7 @@
                     "bytesReceived": 864890,
                     "bytesSent": 0,
                     "requests": 59,
-                    "downloadTime": 38461973,
+                    "downloadTime": 24804769,
                     "queryLengthServed": 0
                 },
                 "index": {
@@ -17780,7 +17780,7 @@
                     "bytesReceived": 4526,
                     "bytesSent": 0,
                     "requests": 36,
-                    "downloadTime": 22969176,
+                    "downloadTime": 27182084,
                     "queryLengthServed": 0
                 },
                 "statsResult": {
