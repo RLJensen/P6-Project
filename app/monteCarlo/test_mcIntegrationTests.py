@@ -1,7 +1,5 @@
 import unittest
 from unittest.mock import patch
-import logging
-from io import StringIO
 import random
 
 # Assuming the functions are in a module named `dice_module`
