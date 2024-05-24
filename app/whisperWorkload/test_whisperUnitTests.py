@@ -41,5 +41,29 @@ class TestWhisper(unittest.TestCase):
         # Assertions
         self.assertEqual(result, ['result1', 'result2', 'result3', 'result4', 'result5'])
 
+    def test_findSoundFiles(self):
+        # Mocking return value
+        with patch('whisperWorkload.os.listdir') as mock_listdir:
+            mock_listdir.return_value = ['test1.mp3', 'test2.mp3', 'test3.mp3']
+
+            # Call the function to test
+            result = whisperWorkload.findSoundFiles()
+
+            # Assertions
+            self.assertEqual(result, ['test1.mp3', 'test2.mp3', 'test3.mp3'])
+    
+    @patch('whisperWorkload.random.choice')
+    def test_selectRandomFile(self, mock_choice):
+        # Mocking return value
+        mock_choice.return_value = 'test.mp3'
+
+        # Call the function to test
+        result = whisperWorkload.selectRandomFile(['test1.mp3', 'test2.mp3', 'test3.mp3'])
+
+        # Assertions
+        self.assertEqual(result, 'test.mp3')
+
+        self.assertIsInstance(result, str) # result should be a string
+
 if __name__ == '__main__':
     unittest.main()

@@ -16,20 +16,20 @@ def setup_logger():
     if custom_logger.hasHandlers():
         custom_logger.handlers.clear()
 
-    # try:
-    #     handler = logging_loki.LokiHandler(
-    #         url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
-    #         tags={"application": "Workload",
-    #               "host": hostname,
-    #               "workload": workload_type,
-    #               "affinity":"worker2",
-    #               "uuid": uuid},
-    #         auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
-    #         version="1",
-    #     )
-    # except Exception as e:
-    #     print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
-    #     raise
+    try:
+        handler = logging_loki.LokiHandler(
+            url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
+            tags={"application": "Workload",
+                  "host": hostname,
+                  "workload": workload_type,
+                  "affinity":"worker2",
+                  "uuid": uuid},
+            auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
+            version="1",
+        )
+    except Exception as e:
+        print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
+        raise
     
     handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -62,6 +62,11 @@ def estimateDice(funds,initial_wager,count):
     except Exception as e:
         logging.error(f"Error: {e}")
 
+    try:
+        rollLog = convertToPercentage(rollLog, count)
+    except Exception as e:
+        logging.error(f"Error: {e}")
+
     logging.info(f"Number of wins: {num_wins}")
     logging.info(f"Number of losses: {count - num_wins}")
     logging.info(f"Final funds: {value}")
@@ -86,13 +91,10 @@ def doRolls(rollLog, count, num_wins, value, wager):
     return value, num_wins, rollLog
 
 def convertToPercentage(rollLog, count):
-        try:
-            for i, result in enumerate(rollLog):
-                if i > 2:
-                    rollLog[i] = round(result / count * 100, 5)
-            return rollLog
-        except Exception as e:
-            logging.error(f"Error: {e}")
+    for i, result in enumerate(rollLog):
+        if i > 2:
+            rollLog[i] = round(result / count * 100, 5)
+    return rollLog
 
 def rollDice():
     return random.randint(1,6)
