@@ -62,6 +62,11 @@ def estimateDice(funds,initial_wager,count):
     except Exception as e:
         logging.error(f"Error: {e}")
 
+    try:
+        rollLog = convertToPercentage(rollLog, count)
+    except Exception as e:
+        logging.error(f"Error: {e}")
+
     logging.info(f"Number of wins: {num_wins}")
     logging.info(f"Number of losses: {count - num_wins}")
     logging.info(f"Final funds: {value}")
@@ -86,13 +91,10 @@ def doRolls(rollLog, count, num_wins, value, wager):
     return value, num_wins, rollLog
 
 def convertToPercentage(rollLog, count):
-        try:
-            for i, result in enumerate(rollLog):
-                if i > 2:
-                    rollLog[i] = round(result / count * 100, 5)
-            return rollLog
-        except Exception as e:
-            logging.error(f"Error: {e}")
+    for i, result in enumerate(rollLog):
+        if i > 2:
+            rollLog[i] = round(result / count * 100, 5)
+    return rollLog
 
 def rollDice():
     return random.randint(1,6)

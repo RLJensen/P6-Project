@@ -1,38 +1,43 @@
 import unittest
-from unittest.mock import patch
-import logging
-import monteCarloAlgo
+import monteCarloAlgo as mca
 
-class TestMonteCarlo(unittest.TestCase):
-    @patch('monteCarloAlgo.random.randint')
-    def test_estimateDice(self, mock_randint):
-        mock_randint.return_value = 100  # Ensuring a predictable result for the rollDice function
-        logging.disable(logging.CRITICAL)  # Disable logging to avoid cluttering the test output
+class TestMonteCarloAlgo(unittest.TestCase):
+    def test_rollDice(self):
+        result = mca.rollDice()
+        self.assertTrue(1 <= result <= 6)
 
-        funds = 100
-        initial_wager = 10
-        wager_count = 100
+    def test_roll3Dice(self):
+        result = mca.roll3Dice()
+        self.assertTrue(3 <= result <= 18)
 
-        final_value, num_wins = monteCarloAlgo.estimateDice(funds, initial_wager, wager_count)
+    def test_estimateDice(self):
+        funds = 10000
+        initial_wager = 100
+        count = 1000
+        value, num_wins, rollLog = mca.estimateDice(funds, initial_wager, count)
+        self.assertTrue(0 <= num_wins <= count)
+        self.assertTrue(len(rollLog) == 19)
 
-        # Assert that the final funds are equal to the initial funds minus (initial wager * wager count)
-        self.assertEqual(final_value, funds - (initial_wager * wager_count))
+    def test_doRolls(self):
+        rollLog = [0] * 19
+        count = 1000
+        num_wins = 0
+        value = 10000
+        wager = 100
+        value, num_wins, rollLog = mca.doRolls(rollLog, count, num_wins, value, wager)
+        self.assertTrue(0 <= num_wins <= count)
+        self.assertTrue(len(rollLog) == 19)
 
-        # Assert that the number of wins and losses are within expected ranges
-        expected_wins = sum(1 for _ in range(wager_count) if monteCarloAlgo.rollDice())
-        expected_losses = wager_count - expected_wins
-        self.assertEqual(num_wins, expected_wins)
-        self.assertEqual(wager_count - num_wins, expected_losses)
+    def test_convertToPercentage(self):
+        rollLog = [0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 2, 0, 1, 2, 0, 0, 0]
+        count = 10
+        result = mca.convertToPercentage(rollLog, count)
+        self.assertTrue(len(result) == 19)
+        self.assertTrue(result[12] == 20)
 
-    @patch('monteCarloAlgo.random.randint')
-    def test_rollDice(self, mock_randint):
-        # Test rollDice function with different roll values
-        mock_randint.side_effect = [100, 25, 75]  # Mocking different roll values for testing
-
-        # Test scenarios for each possible outcome
-        self.assertFalse(monteCarloAlgo.rollDice())  # Test when roll is 100
-        self.assertFalse(monteCarloAlgo.rollDice())  # Test when roll is between 1-50
-        self.assertTrue(monteCarloAlgo.rollDice())   # Test when roll is between 51-99
+    def test_startWorkload(self):
+        result = mca.startWorkload()
+        self.assertTrue(1000000 <= result <= 5000000)
 
 if __name__ == '__main__':
     unittest.main()

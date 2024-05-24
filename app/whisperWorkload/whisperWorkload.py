@@ -19,21 +19,22 @@ def setup_logger():
     if custom_logger.hasHandlers():
         custom_logger.handlers.clear()
 
-    try:
-        handler = logging_loki.LokiHandler(
-            url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
-            tags={"application": "Workload",
-                  "host": hostname,
-                  "workload": workload_type,
-                  "affinity":"worker3",
-                  "uuid": uuid},
-            auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
-            version="1",
-        )
-    except Exception as e:
-        print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
-        raise
+    # try:
+    #     handler = logging_loki.LokiHandler(
+    #         url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
+    #         tags={"application": "Workload",
+    #               "host": hostname,
+    #               "workload": workload_type,
+    #               "affinity":"worker3",
+    #               "uuid": uuid},
+    #         auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
+    #         version="1",
+    #     )
+    # except Exception as e:
+    #     print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
+    #     raise
     
+    handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
@@ -57,32 +58,40 @@ def startWorkload():
 # Load the model and transcribe the sound file, if no sound file is found, raises an error
 def loadModel():
     try:
-        files = os.listdir(os.getcwd())
-        sound_files = [file for file in files if file.endswith('.mp3')]
-    except Exception as e:
-        logging.error(f"error: {e}")
+        sound_files = findSoundFiles()
 
-    if not sound_files:  # Check if the list is empty
-        logging.error("Error: List of MP3 sound files is empty")
-        raise FileNotFoundError("No MP3 sound files found in the directory.")
-
-    try:    
-        logging.info(f"Found {len(sound_files)} sound files: {sound_files}")
-        sound_file = random.choice(sound_files)
-        logging.info(f"Selected sound file: {sound_file}")
+        sound_file = selectRandomFile(sound_files)
         model = whisper.load_model("tiny", None, download_root = "./")
         result = model.transcribe(sound_file, fp16 = False)
-    except Exception as e:
-        logging.error(f"Error: {e}")
 
-    whisperText = list(result.values())[0]
-    searchresult = performSearch(whisperText)
-    return result, searchresult
+        whisperText = list(result.values())[0]
+        searchresult = performSearch(whisperText)
+        return result, searchresult
+    except Exception as e:
+        logging.error(f"error: {e}")
+        raise FileNotFoundError("No MP3 sound files found in the directory.")
 
 # Perform a google search on the transcribed text
 def performSearch(query):
     result = search(query,5,"en",None,False,10,5)
     return result
+
+def findSoundFiles():
+    try:
+        files = os.listdir(os.getcwd())
+        sound_files = [file for file in files if file.endswith('.mp3')]
+        logging.info(f"Found {len(sound_files)} sound files: {sound_files}")
+        return sound_files
+    except Exception as e:
+        logging.error(f"error: {e}")
+        raise FileNotFoundError("No MP3 sound files found in the directory.")
+
+    return sound_files
+
+def selectRandomFile(sound_files):
+    sound_file = random.choice(sound_files)
+    logging.info(f"Selected sound file: {sound_file}")
+    return sound_file
 
 if __name__ == "__main__":
     setup_logger()
