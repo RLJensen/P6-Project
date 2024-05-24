@@ -5,7 +5,6 @@ import logging
 import logger
 from googlesearch import search
 import uuid
-import socket
 import logging_loki
 from dotenv import load_dotenv
 
@@ -19,20 +18,20 @@ def setup_logger():
     if custom_logger.hasHandlers():
         custom_logger.handlers.clear()
 
-    # try:
-    #     handler = logging_loki.LokiHandler(
-    #         url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
-    #         tags={"application": "Workload",
-    #               "host": hostname,
-    #               "workload": workload_type,
-    #               "affinity":"worker3",
-    #               "uuid": uuid},
-    #         auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
-    #         version="1",
-    #     )
-    # except Exception as e:
-    #     print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
-    #     raise
+    try:
+        handler = logging_loki.LokiHandler(
+            url=os.environ['GRAFANACLOUD_URL'],  # Directly accessing for immediate error on misconfig
+            tags={"application": "Workload",
+                  "host": hostname,
+                  "workload": workload_type,
+                  "affinity":"worker3",
+                  "uuid": uuid},
+            auth=(os.environ['GRAFANACLOUD_USERNAME'], os.environ['GRAFANACLOUD_PASSWORD']),
+            version="1",
+        )
+    except Exception as e:
+        print(f"Failed to setup Loki handler: {str(e)}")  # Immediate feedback on failure
+        raise
     
     handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
