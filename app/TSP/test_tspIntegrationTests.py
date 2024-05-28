@@ -1,4 +1,5 @@
 import unittest
+import pytest
 from unittest.mock import patch, mock_open
 import os
 from tspAlgorithm import read_city_coordinates, genetic_algorithm, setup_logger
@@ -54,5 +55,3 @@ class TestGeneticAlgorithmIntegration(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-

@@ -1,6 +1,9 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import whisperWorkload
+import logging
+import pytest
+from whisperWorkload import startWorkload
 
 class TestWhisperIntegrationNoLogging(unittest.TestCase):
     @patch('whisperWorkload.performSearch')
@@ -47,6 +50,38 @@ class TestWhisperIntegrationNoLogging(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             whisperWorkload.loadModel()
 
+# Custom logging handler to capture log outputs for verification
+class LogCapture(logging.Handler):
+    def __init__(self):
+        super().__init__()
+        self.records = []
+
+    def emit(self, record):
+        self.records.append(record)
+
+@pytest.fixture
+def log_capture():
+    log_capture = LogCapture()
+    logging.getLogger().addHandler(log_capture)
+    yield log_capture
+    logging.getLogger().removeHandler(log_capture)
+
+def test_startWorkload(log_capture, capsys):
+    with patch('whisperWorkload.loadModel') as mock_loadModel:
+        # Setup the return value of loadModel mock
+        mock_loadModel.return_value = (
+            {"key1": "value1", "key2": "value2"},
+            ["info1", "info2"]
+        )
+
+        startWorkload()
+
+        # Verify the print output
+        captured = capsys.readouterr()
+        assert "key1 : value1" in captured.out
+        assert "key2 : value2" in captured.out
+
+
+
 if __name__ == '__main__':
     unittest.main()
-

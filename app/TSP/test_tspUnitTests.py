@@ -1,6 +1,9 @@
 import unittest
 import tspAlgorithm
-
+from unittest.mock import patch, MagicMock
+import os
+import logging
+from tspAlgorithm import setup_logger
 
 class TestTSP(unittest.TestCase):
 
@@ -10,7 +13,6 @@ class TestTSP(unittest.TestCase):
         filename = 'TSP/cities.txt'
         num_cities = 10
         cities = tspAlgorithm.read_city_coordinates(filename, num_cities)
-        print(cities)
         self.assertEqual(len(cities), num_cities)
 
     def test_generate_initial_population(self):
@@ -55,6 +57,6 @@ class TestTSP(unittest.TestCase):
         num_generations = 3
         result = tspAlgorithm.genetic_algorithm(self.cities)
         self.assertEqual(len(result), 2)
-    
+
 if __name__ == '__main__':
     unittest.main()

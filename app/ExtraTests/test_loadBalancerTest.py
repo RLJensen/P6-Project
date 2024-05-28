@@ -12,14 +12,9 @@ def test_load_balancing():
             json_data = json.load(file)
 
         stream_objects = [stream['stream'] for stream in json_data['data']['result']]
-        #stream_CPU = [stream['stream'] for stream in json_data['data']['result']]
-        #stream_CPU = [stream['stream'] for stream in json_data]
         load_balancing_count = sum(1 for stream_obj in stream_objects if stream_obj['host'] != stream_obj['affinity'])
-        #load_balancing_accuracy = sum(1 for stream_obj in stream_CPU if stream_obj['cpu'] > 60.0)
 
         print(f"Load balancing occurred {load_balancing_count} times out of {len(stream_objects)} instances. Over the past {days}.")
-        #print(f"Load balancing occurred correctly {load_balancing_accuracy} times out of {len(stream_objects)} instances. Over the past {days}")
-
         # Perform assertions
         assert load_balancing_count > 0, "No load balancing occurrences detected!"
     except:
