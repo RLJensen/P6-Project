@@ -1,0 +1,1411 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 22,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "max": 3970000000,
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "sishort"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.1.0-70903",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "editorMode": "code",
+          "expr": "sum by (instance) (node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes)",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Memory Usage",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.1.0-70903",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "editorMode": "code",
+          "expr": "sum by(instance)(avg without(cpu) (irate(node_cpu_seconds_total{job=\"integrations/node_exporter\", mode!=\"idle\"}[5m])))",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "CPU usage",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "grafanacloud-logs"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "sum by(workload)(count_over_time({application=\"Workload\"}[30m]))",
+          "hide": false,
+          "legendFormat": "{{workload}}",
+          "queryType": "range",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\", namespace=\"\"} [30m])",
+          "legendFormat": "Status Monitor",
+          "queryType": "range",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\", namespace=\"kube-system\"} [30m])",
+          "hide": false,
+          "legendFormat": "{{namespace}}",
+          "queryType": "range",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\", namespace=\"k8s-monitoring\"} [30m])",
+          "hide": false,
+          "legendFormat": "{{namespace}}",
+          "queryType": "range",
+          "refId": "D"
+        }
+      ],
+      "timeFrom": "1d",
+      "title": "Logs over Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "grafanacloud-logs"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "dashed"
+            }
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 1,
+      "interval": "1m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({application=\"Workload\", severity=\"error\"} [5m])",
+          "legendFormat": "Workload Error",
+          "queryType": "range",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\"} |= \"FailedScheduling\" |= \"count=1\"[5m])",
+          "hide": false,
+          "legendFormat": "Scheduling Error",
+          "queryType": "range",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\"} |=\"FailedKillPod\" |= \"count=1\"[5m])",
+          "hide": false,
+          "queryType": "range",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\"} |=\"FailedMount\" |= \"count=1\"[5m])",
+          "hide": false,
+          "queryType": "range",
+          "refId": "D"
+        }
+      ],
+      "timeFrom": "1h",
+      "title": "Errors over Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 100,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 1,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 7
+      },
+      "id": 6,
+      "interval": "1m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "editorMode": "code",
+          "expr": "sum by (instance) ((node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes)/(node_memory_MemTotal_bytes))*100",
+          "interval": "",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "timeFrom": "1h",
+      "title": "Memory Usage over Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "grafanacloud-prom"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 7
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "grafanacloud-prom"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "sum by(instance)(avg without(cpu) (irate(node_cpu_seconds_total{job=\"integrations/node_exporter\", mode!=\"idle\"}[5m])))",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "{{mode}}",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "timeFrom": "1h",
+      "title": "CPU over Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "grafanacloud-logs"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 9,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.1.0-69950",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\"} |= \"Started container tspapp\"[5m])",
+          "legendFormat": "TSP",
+          "queryType": "range",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\"} |= \"Started container mcapp\"[5m])",
+          "hide": false,
+          "legendFormat": "Monte Carlo",
+          "queryType": "range",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "count_over_time({service_name=\"integrations/kubernetes/eventhandler\"} |= \"Started container whisperapp\"[5m])",
+          "hide": false,
+          "legendFormat": "Whisper",
+          "queryType": "range",
+          "refId": "C"
+        }
+      ],
+      "timeFrom": "1d",
+      "title": "Workloads over Time",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "grafanacloud-logs"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Message"
+            },
+            "properties": [
+              {
+                "id": "custom.inspect",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 15
+      },
+      "id": 10,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 0,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Time"
+          }
+        ]
+      },
+      "pluginVersion": "11.1.0-70903",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "{service_name=\"integrations/kubernetes/eventhandler\"} |=\"FailedScheduling\" |= \"count=1\"",
+          "queryType": "range",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "{service_name=\"integrations/kubernetes/eventhandler\"} |=\"FailedKillPod\" |= \"count=1\"",
+          "hide": false,
+          "queryType": "range",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "{service_name=\"integrations/kubernetes/eventhandler\"} |=\"FailedMount\" |= \"count=1\"",
+          "hide": false,
+          "queryType": "range",
+          "refId": "C"
+        }
+      ],
+      "timeFrom": "2d",
+      "title": "Error Cases",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "keepTime": false,
+            "replace": false,
+            "source": "Line"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "reason",
+                "msg"
+              ]
+            }
+          }
+        },
+        {
+          "id": "merge",
+          "options": {}
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "Time": 1,
+              "msg": 2,
+              "reason": 0
+            },
+            "renameByName": {
+              "msg": "Message",
+              "reason": "Case"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Mixed --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": false,
+            "inspect": false
+          },
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "CPU"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "RAM"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 23
+      },
+      "id": 7,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "Node"
+          }
+        ]
+      },
+      "pluginVersion": "11.1.0-70903",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "builder",
+          "expr": "{application=\"Workload\"}",
+          "hide": false,
+          "queryType": "range",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": "2h",
+      "title": "Overload Cases",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "keepTime": false,
+            "replace": false,
+            "source": "labels"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "CPU",
+                "RAM",
+                "host",
+                "uuid",
+                "workload"
+              ]
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "CPU": 1,
+              "RAM": 2,
+              "Time": 4,
+              "host": 3,
+              "uuid": 5,
+              "workload": 0
+            },
+            "renameByName": {
+              "CPU": "",
+              "RAM": "",
+              "host": "Node",
+              "workload": "Workload "
+            }
+          }
+        },
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "number",
+                "enumConfig": {
+                  "text": [
+                    "98.0",
+                    "93.5",
+                    "99.1",
+                    "99.0",
+                    "97.2",
+                    "93.4",
+                    "92.7",
+                    "91.6",
+                    "91.3",
+                    "91.0",
+                    "90.4",
+                    "100.0",
+                    "91.1",
+                    "98.2",
+                    "97.3",
+                    "96.4",
+                    "93.2",
+                    "92.1",
+                    "92.6",
+                    "98.4",
+                    "93.0",
+                    "98.1",
+                    "93.6",
+                    "93.3",
+                    "92.0",
+                    "95.2",
+                    "94.1",
+                    "94.9"
+                  ]
+                },
+                "targetField": "CPU"
+              },
+              {
+                "destinationType": "number",
+                "targetField": "RAM"
+              }
+            ],
+            "fields": {}
+          }
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "CPU": {
+                "aggregations": [
+                  "mean"
+                ],
+                "operation": "aggregate"
+              },
+              "Node": {
+                "aggregations": [
+                  "firstNotNull"
+                ],
+                "operation": "aggregate"
+              },
+              "RAM": {
+                "aggregations": [
+                  "mean"
+                ],
+                "operation": "aggregate"
+              },
+              "Time": {
+                "aggregations": [
+                  "firstNotNull"
+                ],
+                "operation": "aggregate"
+              },
+              "Workload ": {
+                "aggregations": [
+                  "firstNotNull"
+                ],
+                "operation": "aggregate"
+              },
+              "uuid": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "CPU (mean)": 1,
+              "Node (firstNotNull)": 3,
+              "RAM (mean)": 2,
+              "Time (firstNotNull)": 4,
+              "Workload  (firstNotNull)": 0,
+              "uuid": 5
+            },
+            "renameByName": {
+              "CPU (mean)": "CPU",
+              "Node (firstNotNull)": "Node",
+              "RAM (mean)": "RAM",
+              "Time (firstNotNull)": "Time",
+              "Workload  (firstNotNull)": "Workload",
+              "uuid": ""
+            }
+          }
+        },
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "greaterOrEqual",
+                  "options": {
+                    "value": 80
+                  }
+                },
+                "fieldName": "CPU"
+              },
+              {
+                "config": {
+                  "id": "greaterOrEqual",
+                  "options": {
+                    "value": 80
+                  }
+                },
+                "fieldName": "RAM"
+              }
+            ],
+            "match": "any",
+            "type": "include"
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "grafanacloud-logs"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "center",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "filterable": false,
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 23
+      },
+      "id": 8,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "frameIndex": 0,
+        "showHeader": true
+      },
+      "pluginVersion": "11.1.0-70903",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "{application=\"Workload\",workload=\"Monte Carlo\", host != \"worker2\"}",
+          "hide": false,
+          "queryType": "range",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "{application=\"Workload\",workload=\"TSP\", host != \"worker1\"}",
+          "hide": false,
+          "queryType": "range",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "grafanacloud-logs"
+          },
+          "editorMode": "code",
+          "expr": "{application=\"Workload\",workload=\"Whisper\", host != \"worker3\"}",
+          "hide": false,
+          "queryType": "range",
+          "refId": "C"
+        }
+      ],
+      "timeFrom": "3h",
+      "title": "Load Balancing Cases",
+      "transformations": [
+        {
+          "id": "extractFields",
+          "options": {
+            "replace": true,
+            "source": "labels"
+          }
+        },
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "affinity",
+                "host",
+                "uuid",
+                "workload"
+              ]
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "includeByName": {},
+            "indexByName": {
+              "affinity": 1,
+              "host": 2,
+              "workload": 0
+            },
+            "renameByName": {}
+          }
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "affinity": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "host": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "uuid": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "workload": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "merge",
+          "options": {}
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timeRangeUpdatedDuringEditOrView": false,
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "P6-Dashboard",
+  "uid": "bdkl6ntz3fw8we",
+  "version": 39,
+  "weekStart": ""
+}
