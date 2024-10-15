@@ -1,7 +1,7 @@
 # P6-Project
 
 ## Generateing Docker image
-In order to create the docker image will a few environment variables be declared which is listed below, the ".env" file should be located in the root folder for the repository:
+In order to create the docker image will a few environment variables be declared which is listed below, the ".env" file should be located in the root folder for the repository: <br />
 GRAFANACLOUD_URL="your grafana URL" <br />
 GRAGANACLOUD_USERNAME="your grafana username" <br />
 GRAFANACLOUD_PASSWORD="your grafana password" <br />
