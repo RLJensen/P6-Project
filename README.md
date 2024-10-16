@@ -11,3 +11,8 @@ The whisper workload uses an AI model which can be downloaded from their website
 
 #### Operating System and CPU Architecture
 We have used Ubuntu server as the operating system for each node, furthermore is the CPU architecture important for the docker file aswell depending on which IoT device the image will be containerized on, in our case we build the image to be containerized on an ARM architecture which will have to be declared the "docker build command". 
+
+#### Deployment of premetheous and Loki 
+We choose to also use prometheus and Loki for monitoring which we deployed on the cluster using Helm Chart there is information about this in the link below: <br />
+https://grafana.com/docs/grafana-cloud/monitor-infrastructure/kubernetes-monitoring/configuration/config-k8s-helmchart/ <br />
+Grafana cloud will generate the command for the deployment of the helm chart, where this command will be configured with the relative cluster.
